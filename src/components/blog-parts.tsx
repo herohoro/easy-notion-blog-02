@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
+import $ from 'jquery'
 import NotionBlock from './notion-block'
 import * as interfaces from '../lib/notion/interfaces'
 import {
@@ -121,14 +121,57 @@ export const PostBody = ({ blocks }) => (
     ))}
   </div>
 )
-export const IndexList = ({ blocks, heading }) => (
-  <div className={styles.indexList}>
+export const IndexList = ({ blocks, heading }) => {
+
+  const setFadeElement=()=>{
+    const windowH = $(window).height();	
+    const scroll = $(window).scrollTop();
+
+    
+      const contentsTop = Math.round($('#slugArea').offset().top);
+    
+
+    
+    const contentsH = $('#slugArea').outerHeight(true);	
+
+      //出現範囲内に入ったかどうかをチェック
+    if(scroll+windowH >= contentsTop && scroll+windowH  <= contentsTop+contentsH){
+      $("#mokuji").addClass("LeftMove"); //入っていたらLeftMoveをクラス追加
+      $("#mokuji").removeClass("RightMove"); //RightMoveを削除
+      $(".hideBtn").removeClass("hideBtn"); //hide-btnを削除
+      }
+      else{
+          if(!$("hideBtn").length){				//サイト表示時にRightMoveクラスを一瞬付与させないためのクラス付け。hide-btnがなければ下記の動作を行う
+        $("#mokuji").addClass("RightMove");  //RightMoveをクラス追加
+        $("#mokuji").removeClass("LeftMove"); //LeftMoveを削除
+          }		
+        }
+    }
+    if (typeof window !== "undefined") {
+      // windowを使う処理を記述
+      $(window).scroll(function () {
+        setFadeElement();/* スクロールした際の動きの関数を呼ぶ*/
+      });
+      
+      // ページが読み込まれたらすぐに動かしたい場合の記述
+      $(window).on('load', function () {
+        setFadeElement();/* スクロールした際の動きの関数を呼ぶ*/
+      });
+    }
+    
+    
+
+
+
+  return(
+  <div className={styles.mokuji+" "+styles.hideBtn} >
     <h3>{heading}</h3>
     {wrapListItems(blocks).map((block, i) => (
       <ContentIndex block={block} key={`post-body-${i}`} />
     ))}
   </div>
-)
+  )
+}
 export const ClosePhrase = () => (
   <div>
     <p>Twitterでは更新のお知らせを随時行っています</p>

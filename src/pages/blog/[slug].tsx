@@ -113,7 +113,7 @@ const RenderPost = ({
       />
       <div className={styles.flexWraper}>
         <div className={styles.mainContent}>
-          <div className={styles.postSlug}>
+          <div className={styles.postSlug} id='slugArea'>
             <PostDate post={post} />
             <PostTitleSlug post={post} enableLink={false} />
             {/* <PostThumbnailSlug post={post} /> */}
