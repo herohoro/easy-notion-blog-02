@@ -7,8 +7,8 @@ export const Medama = ()=>{
           <div className={styles.eye}></div>
       </div>
       
-        {document.querySelector<HTMLElement>('body').addEventListener("mousemove", medama)}
-        {function medama(){
+        {document.querySelector<HTMLElement>('body').addEventListener("mousemove", Medama)}
+        {function Medama(){
             const eye = document.querySelectorAll('.eye');
             eye.forEach(function(eye){
                 let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
