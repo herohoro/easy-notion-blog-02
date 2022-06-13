@@ -19,6 +19,7 @@ import {
   IndexList,
   NewPostList,
 } from '../../components/blog-parts'
+import {Medama} from '../../components/hero/medama.js'
 import SocialButtons from '../../components/social-buttons'
 import styles from '../../styles/blog.module.css'
 import { getBlogLink } from '../../lib/blog-helpers'
@@ -163,7 +164,10 @@ const RenderPost = ({
             enableThumnail={true}
           />
           <TwitterTimeline />
-          <IndexList heading="★ MOKUJI ★" blocks={blocks} />
+          <div>
+            <Medama />
+            <IndexList heading="★ MOKUJI ★" blocks={blocks} />
+          </div>
         </div>
       </div>
       <div className={styles.endContent}>
