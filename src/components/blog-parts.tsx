@@ -11,6 +11,7 @@ import {
   getTagLink,
   getTagBeforeLink,
 } from '../lib/blog-helpers'
+import {Medama} from './hero/medama'
 import styles from '../styles/blog-parts.module.css'
 import ContentIndex from './content-index'
 
@@ -123,6 +124,7 @@ export const PostBody = ({ blocks }) => (
 )
 export const IndexList = ({ blocks, heading }) => (
   <div className={styles.indexList}>
+    <Medama/>
     <h3>{heading}</h3>
     {wrapListItems(blocks).map((block, i) => (
       <ContentIndex block={block} key={`post-body-${i}`} />

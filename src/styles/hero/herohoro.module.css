@@ -1,9 +1,5 @@
-*
-{
-    margin:0;
-    padding:0;
-}
-body
+
+.indexList
 {
     display: flex;
     justify-content: flex-end;
@@ -13,16 +9,17 @@ body
     background:radial-gradient(#d4f0ff,#f8f485);
 }
   
-.box
+.eyeBox
 {
     display: flex;
+    justify-content: space-between
 }
 
-.box .eye
+.eyeBox .eye
 {
     position:relative;
     width: 120px;
-    height: 120px;
+    height: 70px;
     display: block;
     background: #fff;
     margin: 0 20px;
@@ -31,14 +28,14 @@ body
         inset 0 0 15px #f2761e,
         inset 0 0 25px #f2761e;
 }
-.box .eye::before{
+.eyeBox .eye::before{
     content: '';
     position: absolute;
     top: 50%;
     left: 35px;
     transform: translate(-50%,-50%);
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #000;
     border: 10px solid #a49af5;
