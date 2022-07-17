@@ -144,7 +144,8 @@ export interface List {
 }
 
 export interface RichText {
-  Text: Text
+  Text?: Text
+  Equation?: Equation
   Annotation: Annotation
   PlainText: string
   Href?: string
