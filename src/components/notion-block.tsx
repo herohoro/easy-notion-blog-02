@@ -1,6 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import * as interfaces from '../lib/notion/interfaces'
+import { InlineMath } from 'react-katex'
 
 const Code = dynamic(() => import('./notion-blocks/code'))
 const Embed = dynamic(() => import('./notion-blocks/embed'))
@@ -12,6 +13,10 @@ import styles from '../styles/notion-block.module.css'
 
 const RichText = ({ richText }) => {
   let element = richText.Text.Content
+
+  if (richText.Equation.Expression) {
+    element = <InlineMath>{richText.Equation.Expression}</InlineMath>
+  }
 
   if (richText.Annotation.Bold) {
     element = <b>{element}</b>
