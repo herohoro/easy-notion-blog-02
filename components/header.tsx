@@ -18,7 +18,7 @@ const Header = () => {
     { label: 'Home', path: '/' },
     { label: 'Map', path: '/map' },
     { label: 'Blog', path: '/blog' },
-    { label: 'Space', path: '/herospace' },
+    { label: 'Space', path: '/space' },
   ]
 
   return (
