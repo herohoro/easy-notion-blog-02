@@ -349,9 +349,7 @@ const PostLinkListThumnail = ({ posts }) => {
               />
             </Link>
             <div>
-              <Link href={getBlogLink(post.Slug)}>
-                <a>{post.Title}</a>
-              </Link>
+              <Link href={getBlogLink(post.Slug)}>{post.Title}</Link>
               <span> &#x1f91f; {post.LikeRank}</span>
             </div>
           </div>
