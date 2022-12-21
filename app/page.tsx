@@ -62,7 +62,7 @@ const RootPage = async () => {
               src="/hero-room.jpg"
               width={300}
               height={300}
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'contain', width: '100%' }}
               alt=""
             />
           </div>
