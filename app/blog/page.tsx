@@ -48,7 +48,7 @@ const BlogPage = async () => {
                 src="/study-hero.jpeg"
                 width={300}
                 height={200}
-                style={{ objectFit: 'contain' }}
+                style={{ objectFit: 'contain', width: '100%' }}
                 alt=""
               />
             </div>

@@ -59,7 +59,7 @@ const MapPage = async () => {
               src="/study-hero.jpeg"
               width={300}
               height={300}
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'contain', width: '100%' }}
               alt=""
             />
           </div>
