@@ -10,7 +10,11 @@ const DocumentHead = ({
   path = '',
   urlOgImage = '',
 }) => {
-  const defaultImageURL = new URL('/hero-room.jpg', NEXT_PUBLIC_URL)
+  const elements = path.split('/')
+  const isSlugPath =
+    elements[0] === '' && elements[1] === 'blog' && elements.length === 3
+  const isRootPath = path === '' || path === '/'
+
   return (
     <>
       <title>
@@ -38,16 +42,26 @@ const DocumentHead = ({
         content={description ? description : NEXT_PUBLIC_SITE_DESCRIPTION}
       />
       <meta property="og:site_name" content={NEXT_PUBLIC_SITE_TITLE} />
+      <meta
+        property="og:type"
+        content={isRootPath ? 'website' : isSlugPath ? 'article' : 'blog'}
+      />
       {urlOgImage ? (
         <meta property="og:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        <meta property="og:image" content={defaultImageURL.toString()} />
+        <meta
+          property="og:image"
+          content={new URL('/hero-room.jpg', NEXT_PUBLIC_URL).toString()}
+        />
       ) : null}
       <meta name="twitter:card" content="summary_large_image" />
       {urlOgImage ? (
         <meta name="twitter:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        <meta name="twitter:image" content={defaultImageURL.toString()} />
+        <meta
+          name="twitter:image"
+          content={new URL('/hero-room.jpg', NEXT_PUBLIC_URL).toString()}
+        />
       ) : null}
       {NEXT_PUBLIC_URL ? (
         <link
