@@ -35,6 +35,7 @@ import {
 } from '../../../lib/notion/client'
 
 export const revalidate = 30
+export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()

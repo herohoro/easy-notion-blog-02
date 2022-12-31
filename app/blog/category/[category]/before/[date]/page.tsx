@@ -28,6 +28,7 @@ import {
 import styles from '../../../../../../styles/blog.module.css'
 
 export const revalidate = 3600
+export const dynamic = 'force-dynamic'
 
 const BlogCategoryBeforeDatePage = async ({
   params: { category: encodedCategory, date: encodedDate },

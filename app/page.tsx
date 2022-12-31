@@ -22,6 +22,7 @@ import {
 } from '../components/blog-parts'
 
 export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 const RootPage = async () => {
   const [blocks, posts, rankedPosts, tags, categorys] = await Promise.all([

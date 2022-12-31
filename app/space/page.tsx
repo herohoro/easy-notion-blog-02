@@ -16,6 +16,7 @@ import {
 import Image from 'next/image'
 
 export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 const RenderPostsSpace = async () => {
   const [tags, categorys, secPosts, secMessages] = await Promise.all([

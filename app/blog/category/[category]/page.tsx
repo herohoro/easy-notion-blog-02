@@ -29,6 +29,7 @@ import {
 
 export const revalidate = 60
 export const dynamicParams = false
+export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
   const categorys = await getAllCategorys()

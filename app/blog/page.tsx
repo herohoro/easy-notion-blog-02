@@ -27,6 +27,7 @@ import {
 import Image from 'next/image'
 
 export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 const BlogPage = async () => {
   const [posts, firstPost, rankedPosts, tags, categorys] = await Promise.all([

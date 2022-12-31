@@ -28,6 +28,7 @@ import {
 } from '../../../../lib/notion/client'
 
 export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
   const tags = await getAllTags()
