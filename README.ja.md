@@ -53,11 +53,11 @@ easy-notion-blog を使えば簡単にブログを開設できます。
 
 1. このリポジトリを Star します 😉
 2. [テンプレート](https://www.notion.so/otoyo/158bd90116004cd19aca26ad88cb5c07?v=a20acca876c2428380e5a2a33db233ed) を自分の Notion へ複製します
-3. 複製したページの URL の次の部分を `DATABASE_ID` としてメモします
-   - `https://notion.so/your-account/<ココ>?v=xxxx`
+3. 複製したページの URL の `https://notion.so/your-account/<ココ>?v=xxxx` を `DATABASE_ID` としてメモします
    - 例) `158bd90116004cd19aca26ad88cb5c07`
-4. [Create an integration](https://developers.notion.com/docs#step-1-create-an-integration) からインテグレーションを作成し "Internal Integration Token" を `NOTION_API_SECRET` としてメモします
-5. 複製したページを再度開き [Share a database with your integration](https://developers.notion.com/docs#step-1-create-an-integration) の手順でインテグレーションにデータベースを共有します
+   - :warning: **注意:** `?v=ここではありません`。`?v=` の前です。
+4. [Create an integration](https://developers.notion.com/docs/create-a-notion-integration#step-1-create-an-integration) からインテグレーションを作成し "Internal Integration Token" を `NOTION_API_SECRET` としてメモします
+5. 複製したページを再度開き [Share a database with your integration](https://developers.notion.com/docs/create-a-notion-integration#step-2-share-a-database-with-your-integration) の手順でインテグレーションにデータベースを共有します
 6. [vercel.com](https://vercel.com/) にログインします
 7. プロジェクトを新規作成しリポジトリとして `otoyo/easy-notion-blog` をインポートします(チームの作成はスキップします)
 8. "Configure Project" で "Environment Variables" を開き先ほどメモした `NOTION_API_SECRET` と `DATABASE_ID` を入力します
