@@ -49,9 +49,8 @@ You can write on your Notion.
 - Node.js v14 or higher
 - [Yarn](https://yarnpkg.com/getting-started)
 
-## Quick Start
-
-1. Star this repo 😉
+1. **Star this repo** :wink:
+   - It makes me motivative!
 2. Duplicate [the template](https://www.notion.so/otoyo/158bd90116004cd19aca26ad88cb5c07?v=a20acca876c2428380e5a2a33db233ed) into your Notion.
 3. Note the part of URL `https://notion.so/your-account/<HERE>?v=xxxx` as `DATABASE_ID`
    - ex) `158bd90116004cd19aca26ad88cb5c07`
