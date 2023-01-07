@@ -131,7 +131,7 @@ export const PostExcerpt = ({ post }) => (
 
 export const PostBody = ({ blocks }) => (
   <div className={styles.postBody}>
-    <NotionBlocks blocks={blocks} />
+    <NotionBlocks blocks={blocks} isRoot={true} />
   </div>
 )
 export const IndexList = ({ blocks, heading }) => (

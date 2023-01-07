@@ -129,11 +129,7 @@ const buildHeadingId = (heading) =>
     .join()
     .trim()
 
-const TableOfContents = ({ block, blocks }) => {
-  const headings = blocks.filter(
-    (b: interfaces.Block) =>
-      b.Type === 'heading_1' || b.Type === 'heading_2' || b.Type === 'heading_3'
-  )
+const TableOfContents = ({ block, headings }) => {
   return (
     <div className={styles.tableOfContents}>
       {headings.map((headingBlock: interfaces.Block) => {
@@ -232,12 +228,12 @@ const Table = ({ block }) => (
   </div>
 )
 
-const ColumnList = ({ block, blocks }) => (
+const ColumnList = ({ block, headings }) => (
   <div className={styles.columnList}>
     {block.ColumnList.Columns.map((column: interfaces.Column) => (
       <div key={column.Id}>
         {column.Children.map((b: interfaces.Block) => (
-          <NotionBlock block={b} blocks={blocks} key={b.Id} />
+          <NotionBlock block={b} headings={headings} key={b.Id} />
         ))}
       </div>
     ))}
@@ -374,7 +370,7 @@ const Toggle = ({ block }) => (
   </details>
 )
 
-const NotionBlock = ({ block, blocks }) => {
+const NotionBlock = ({ block, headings }) => {
   if (block.Type === 'paragraph') {
     return <Paragraph block={block} />
   } else if (block.Type === 'heading_1') {
@@ -384,7 +380,7 @@ const NotionBlock = ({ block, blocks }) => {
   } else if (block.Type === 'heading_3') {
     return <Heading3 block={block} />
   } else if (block.Type === 'table_of_contents') {
-    return <TableOfContents block={block} blocks={blocks} />
+    return <TableOfContents block={block} headings={headings} />
   } else if (block.Type === 'image') {
     return <ImageBlock block={block} />
   } else if (block.Type === 'video') {
@@ -406,7 +402,7 @@ const NotionBlock = ({ block, blocks }) => {
   } else if (block.Type === 'table') {
     return <Table block={block} />
   } else if (block.Type === 'column_list') {
-    return <ColumnList block={block} blocks={blocks} />
+    return <ColumnList block={block} headings={headings} />
   } else if (
     block.Type === 'bulleted_list' ||
     block.Type === 'numbered_list' ||
@@ -422,13 +418,29 @@ const NotionBlock = ({ block, blocks }) => {
   return null
 }
 
-const NotionBlocks = ({ blocks }) => (
-  <>
-    {wrapListItems(blocks).map((block: interfaces.Block, i: number) => (
-      <NotionBlock block={block} blocks={blocks} key={`block-${i}`} />
-    ))}
-  </>
-)
+const NotionBlocks = ({ blocks, isRoot = false, headings = [] }) => {
+  let topLevelHeadings = headings
+  if (isRoot) {
+    topLevelHeadings = blocks.filter(
+      (b: interfaces.Block) =>
+        b.Type === 'heading_1' ||
+        b.Type === 'heading_2' ||
+        b.Type === 'heading_3'
+    )
+  }
+
+  return (
+    <>
+      {wrapListItems(blocks).map((block: interfaces.Block, i: number) => (
+        <NotionBlock
+          block={block}
+          headings={topLevelHeadings}
+          key={`block-${i}`}
+        />
+      ))}
+    </>
+  )
+}
 
 const wrapListItems = (blocks: Array<interfaces.Block>) =>
   blocks.reduce((arr, block: interfaces.Block, i: number) => {
