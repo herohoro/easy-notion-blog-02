@@ -90,21 +90,30 @@ const colorClass = (color: string) => {
   return null
 }
 
-const Paragraph = ({ block }) => (
+const Paragraph = ({ block, headings }) => (
   <p className={colorClass(block.Paragraph.Color)}>
     {block.Paragraph.RichTexts.map(
       (richText: interfaces.RichText, i: number) => (
         <RichText richText={richText} key={`paragraph-${block.Id}-${i}`} />
       )
     )}
+    {block.Paragraph.Children ? (
+      <NotionBlocks blocks={block.Paragraph.Children} headings={headings} />
+    ) : null}
   </p>
 )
 
-const Heading1 = ({ block }) => <Heading heading={block.Heading1} level={1} />
-const Heading2 = ({ block }) => <Heading heading={block.Heading2} level={2} />
-const Heading3 = ({ block }) => <Heading heading={block.Heading3} level={3} />
+const Heading1 = ({ block, headings }) => (
+  <Heading heading={block.Heading1} level={1} headings={headings} />
+)
+const Heading2 = ({ block, headings }) => (
+  <Heading heading={block.Heading2} level={2} headings={headings} />
+)
+const Heading3 = ({ block, headings }) => (
+  <Heading heading={block.Heading3} level={3} headings={headings} />
+)
 
-const Heading = ({ heading, level = 1 }) => {
+const Heading = ({ heading, level = 1, headings }) => {
   const tag = `h${level + 3}`
   const id = buildHeadingId(heading)
   const htag = React.createElement(
@@ -165,15 +174,18 @@ const TableOfContents = ({ block, headings }) => {
   )
 }
 
-const Quote = ({ block }) => (
+const Quote = ({ block, headings }) => (
   <blockquote className={colorClass(block.Quote.Color)}>
     {block.Quote.RichTexts.map((richText: interfaces.RichText, i: number) => (
       <RichText richText={richText} key={`quote-${block.Id}-${i}`} />
     ))}
+    {block.Quote.Children ? (
+      <NotionBlocks blocks={block.Quote.Children} headings={headings} />
+    ) : null}
   </blockquote>
 )
 
-const Callout = ({ block }) => {
+const Callout = ({ block, headings }) => {
   const color = colorClass(block.Callout.Color)
   const className = color ? `${styles.callout} ${color}` : styles.callout
 
@@ -186,6 +198,9 @@ const Callout = ({ block }) => {
             <RichText richText={richText} key={`callout-${block.Id}-${i}`} />
           )
         )}
+        {block.Callout.Children ? (
+          <NotionBlocks blocks={block.Callout.Children} headings={headings} />
+        ) : null}
       </div>
     </div>
   )
@@ -351,11 +366,11 @@ const ToDoItems = ({ blocks, headings }) =>
       </div>
     ))
 
-const SyncedBlock = ({ block }) => (
-  <NotionBlocks blocks={block.SyncedBlock.Children} />
+const SyncedBlock = ({ block, headings }) => (
+  <NotionBlocks blocks={block.SyncedBlock.Children} headings={headings} />
 )
 
-const Toggle = ({ block }) => (
+const Toggle = ({ block, headings }) => (
   <details className={styles.toggle}>
     <summary>
       {block.Toggle.RichTexts.map(
@@ -365,20 +380,20 @@ const Toggle = ({ block }) => (
       )}
     </summary>
     <div>
-      <NotionBlocks blocks={block.Toggle.Children} />
+      <NotionBlocks blocks={block.Toggle.Children} headings={headings} />
     </div>
   </details>
 )
 
 const NotionBlock = ({ block, level, headings }) => {
   if (block.Type === 'paragraph') {
-    return <Paragraph block={block} />
+    return <Paragraph block={block} headings={headings} />
   } else if (block.Type === 'heading_1') {
-    return <Heading1 block={block} />
+    return <Heading1 block={block} headings={headings} />
   } else if (block.Type === 'heading_2') {
-    return <Heading2 block={block} />
+    return <Heading2 block={block} headings={headings} />
   } else if (block.Type === 'heading_3') {
-    return <Heading3 block={block} />
+    return <Heading3 block={block} headings={headings} />
   } else if (block.Type === 'table_of_contents') {
     return <TableOfContents block={block} headings={headings} />
   } else if (block.Type === 'image') {
@@ -388,11 +403,11 @@ const NotionBlock = ({ block, level, headings }) => {
   } else if (block.Type === 'code') {
     return <Code block={block} />
   } else if (block.Type === 'quote') {
-    return <Quote block={block} />
+    return <Quote block={block} headings={headings} />
   } else if (block.Type === 'equation') {
     return <BlockEquation block={block} />
   } else if (block.Type === 'callout') {
-    return <Callout block={block} />
+    return <Callout block={block} headings={headings} />
   } else if (block.Type === 'embed') {
     return <Embed block={block} />
   } else if (block.Type === 'bookmark' || block.Type === 'link_preview') {
@@ -410,9 +425,9 @@ const NotionBlock = ({ block, level, headings }) => {
   ) {
     return <List block={block} level={level} headings={headings} />
   } else if (block.Type === 'synced_block') {
-    return <SyncedBlock block={block} />
+    return <SyncedBlock block={block} headings={headings} />
   } else if (block.Type === 'toggle') {
-    return <Toggle block={block} />
+    return <Toggle block={block} headings={headings} />
   }
 
   return null
