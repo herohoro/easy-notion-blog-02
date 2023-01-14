@@ -365,7 +365,7 @@ const ToDoItems = ({ blocks, headings }) =>
   blocks
     .filter((b: interfaces.Block) => b.Type === 'to_do')
     .map((listItem: interfaces.Block) => (
-      <div key={`to-do-item-${listItem.Id}`}>
+      <div className={colorClass(listItem.ToDo.Color)} key={`to-do-item-${listItem.Id}`}>
         <input type="checkbox" defaultChecked={listItem.ToDo.Checked} />
         {listItem.ToDo.RichTexts.map(
           (richText: interfaces.RichText, i: number) => (
@@ -386,7 +386,7 @@ const SyncedBlock = ({ block, headings }) => (
 )
 
 const Toggle = ({ block, headings }) => (
-  <details className={styles.toggle}>
+  <details className={`${styles.toggle} ${colorClass(block.Toggle.Color)}`}>
     <summary>
       {block.Toggle.RichTexts.map(
         (richText: interfaces.RichText, i: number) => (
