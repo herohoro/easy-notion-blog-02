@@ -108,7 +108,7 @@ const RootPage = async () => {
           <h3>Study TimeLine</h3>
           <hr />
           <iframe
-            src="https://notion2charts.com/embed/bad01964-6bce-4f62-bc9d-1d2899652ed6"
+            src="https://notion2charts.com/embed/4a0acf85-e27d-4abe-bca6-efff7c2db54c"
             width="100%"
             height="400"
           ></iframe>
