@@ -18,7 +18,7 @@ const DocumentHead = ({ title = '', description = '', path = '' }) => {
         NEXT_PUBLIC_URL
       ).toString()
     } else {
-      ogImageContent = new URL('/study-hero.jpeg', NEXT_PUBLIC_URL).toString()
+      ogImageContent = new URL('/hero-room.jpg', NEXT_PUBLIC_URL).toString()
     }
   }
 
