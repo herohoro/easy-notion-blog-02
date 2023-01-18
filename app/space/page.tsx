@@ -64,6 +64,13 @@ const RenderPostsSpace = async () => {
                 <br />
                 カードのタイトルをクリックするとTwitterのスレッドへ飛ぶのでのぞいてみてね。
               </p>
+              <Image
+                src="/neko.jpeg"
+                width={900}
+                height={300}
+                style={{ objectFit: 'contain', width: '100%' }}
+                alt=""
+              />
               <div className={SecStyles.grid}>
                 {secPosts.map((secPost) => {
                   return (
