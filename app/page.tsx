@@ -42,8 +42,16 @@ const RootPage = async () => {
               if (tag === 'README' || tag === 'Q&A') {
                 return (
                   <div className={styles.tagMain}>
-                    <Link href={getTagLink(tag)}>
-                      <p>easy-notion-blog&apos; s {tag}</p>
+                    <Link
+                      href={getTagLink(tag)}
+                      style={{
+                        display: 'block',
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        textShadow: '0 2px 5px rgb(0 0 0 / 50%)',
+                      }}
+                    >
+                      easy-notion-blog&apos; s {tag}
                     </Link>
                   </div>
                 )
