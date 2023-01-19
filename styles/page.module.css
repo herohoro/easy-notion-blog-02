@@ -6,6 +6,61 @@
 .mainContent {
   width: 100%;
 }
+.mainContent :global(h4) {
+  font-size: 2.8rem;
+}
+.mainContent :global(h5) {
+  font-size: 2.5rem;
+}
+.mainContent :global(h6) {
+  font-size: 2rem;
+}
+
+.mainContent p {
+  width: 70%;
+  margin: auto;
+  min-height: 1.8rem;
+}
+.mainContent :global(p) {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  min-height: 1.8rem;
+  white-space: pre-wrap;
+}
+.mainContent :global(video),
+.mainContent :global(img),
+.mainContent :global(.asset-wrapper) {
+  max-width: 100%;
+  display: inline-block;
+  /* border: 3px groove #dddddd;
+  border-radius: 10px; */
+}
+.mainContent :global(a) {
+  color: var(--fg);
+}
+.mainContent :global(a) :hover {
+  color: var(--hero-hover-fg);
+}
+.mainContent :global(.tweet) {
+  margin: 2rem auto;
+  text-align: center;
+}
+.mainContent table {
+  margin: 1rem 0;
+}
+.mainContent ul {
+  font-size: 1rem;
+  list-style-type: square;
+}
+.mainContent ol {
+  font-size: 1rem;
+}
+
+.mainContent p code {
+  color: #eb5757;
+  padding: 0.25rem;
+}
+
 .flexTagsMain {
   width: 100%;
   justify-content: center;
@@ -87,11 +142,6 @@
   /* flex-wrap: wrap; */
   margin-top: 30px;
   align-items: center;
-}
-.mainContent p {
-  width: 70%;
-  margin: auto;
-  min-height: 1.8rem;
 }
 
 @media (min-width: 1024px) {
