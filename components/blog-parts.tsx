@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { Post } from '../lib/notion/interfaces'
@@ -13,6 +15,7 @@ import {
   getTagBeforeLink,
   getCategoryBeforeLink,
 } from '../lib/blog-helpers'
+import { TwitterTimelineEmbed } from 'react-twitter-embed'
 import styles from '../styles/blog-parts.module.css'
 
 export const PostDate = ({ post }) => (
@@ -230,22 +233,17 @@ export const TwitterTimeline = () => (
     <h3>Twitter Timeline</h3>
     <hr />
     <p>フォロー大歓迎＼(^o^)／</p>
-    <a
-      className="twitter-timeline"
-      data-lang="en"
-      data-chrome="nofooter,transparent,noheader"
-      data-width="500"
-      data-height="500"
-      data-theme="light"
-      href="https://twitter.com/mineral_30?ref_src=twsrc%5Etfw"
-    >
-      Tweets by mineral_30
-    </a>{' '}
-    <script
-      async
-      src="https://platform.twitter.com/widgets.js"
-      // charset="utf-8"
-    ></script>
+    <TwitterTimelineEmbed
+      noFooter
+      noHeader
+      onLoad={function noRefCheck() {}}
+      options={{
+        height: 400,
+        width: 400,
+      }}
+      screenName="mineral_30"
+      sourceType="profile"
+    />
   </div>
 )
 export const RssFeed = () => (
