@@ -117,6 +117,7 @@ describe('getAllBlocksByBlockId', () => {
           },
         ],
         Color: 'default',
+        IsToggleable: false,
       },
     }
 
@@ -138,6 +139,7 @@ describe('getAllBlocksByBlockId', () => {
           },
         ],
         Color: 'default',
+        IsToggleable: false,
       },
     }
 
@@ -159,6 +161,7 @@ describe('getAllBlocksByBlockId', () => {
           },
         ],
         Color: 'default',
+        IsToggleable: false,
       },
     }
 
