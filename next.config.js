@@ -50,7 +50,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: '/.well-known/nostr.json',
+        source: '/api/:path*',
         headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }],
       },
     ]
