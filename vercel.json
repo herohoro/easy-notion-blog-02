@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/api/.well-known/:path*",
+      "source": "/.well-known/:path*",
       "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
     }
   ]
