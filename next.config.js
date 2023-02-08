@@ -1,14 +1,11 @@
 const fs = require('fs')
 const path = require('path')
-const {
-  NOTION_API_SECRET,
-  DATABASE_ID,
-} = require('./app/server-constants')
+const { NOTION_API_SECRET, DATABASE_ID } = require('./app/server-constants')
 
 const warnOrError =
   process.env.NODE_ENV !== 'production' || process.env.GITHUB_ACTIONS
     ? console.warn
-    : msg => {
+    : (msg) => {
         throw new Error(msg)
       }
 
@@ -45,5 +42,17 @@ module.exports = {
 
   experimental: {
     appDir: true,
+  },
+}
+
+// CORS
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/.well-known/nostr.json',
+        headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }],
+      },
+    ]
   },
 }
