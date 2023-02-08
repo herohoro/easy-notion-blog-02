@@ -236,7 +236,6 @@ export const TwitterTimeline = () => (
     <TwitterTimelineEmbed
       noFooter
       noHeader
-      onLoad={function noRefCheck() {}}
       options={{
         height: 400,
         width: 400,
