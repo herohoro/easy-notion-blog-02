@@ -19,6 +19,7 @@ import {
   BlogTagLink,
   TwitterTimeline,
   BlogCategoryLink,
+  BuyMeOnigiri,
 } from '../components/blog-parts'
 
 export const revalidate = 60
@@ -87,6 +88,7 @@ const RootPage = async () => {
         </div>
 
         <div className={styles.subContent}>
+          <BuyMeOnigiri />
           <BlogCategoryLink heading="Category List" categorys={categorys} />
           <BlogTagLink heading="Tag List" tags={tags} />
           <h3>Prolile</h3>
