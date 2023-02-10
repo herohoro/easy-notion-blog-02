@@ -427,6 +427,17 @@
 .noContents {
   text-align: center;
 }
+.buyMeCoffee {
+  background: #ffdd00;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+}
+
+.buyMeCoffee:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
 @media (min-width: 1024px) {
   .postDate {
     min-width: 50%;
