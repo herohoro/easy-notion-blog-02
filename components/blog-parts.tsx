@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react'
+import Image from 'next/image'
+
 import Link from 'next/link'
 import { Post } from '../lib/notion/interfaces'
 import NotionBlocks from './notion-block'
@@ -228,21 +229,20 @@ export const NewPostList = () => (
     </Link>
   </div>
 )
-export const BuyMeOnigiri = () => (
-  <div style={{ margin: '3rem 3rem' }}>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-      data-name="bmc-button"
-      data-slug="horomi"
-      data-color="#FFDD00"
-      data-emoji=""
-      data-font="Cookie"
-      data-text="Buy me a coffee"
-      data-outline-color="#000000"
-      data-font-color="#000000"
-      data-coffee-color="#ffffff"
-    ></script>
+export const BuyMeCoffee = () => (
+  <div className={styles.buyMeCoffee}>
+    <a
+      href="https://www.buymeacoffee.com/horomi"
+      target="_blank"
+      style={{ textAlign: 'center' }}
+    >
+      <Image
+        src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+        alt="Buy Me A Coffee"
+        height={60}
+        width={217}
+      />
+    </a>
   </div>
 )
 export const TwitterTimeline = () => (
