@@ -19,6 +19,7 @@ import {
   IndexList,
   NewPostList,
   RssFeed,
+  BuyMeCoffee,
 } from '../../../components/blog-parts'
 import SocialButtons from '../../../components/social-buttons'
 import styles from '../../../styles/blog.module.css'
@@ -108,6 +109,7 @@ const BlogSlugPage = async ({ params: { slug } }) => {
           </div>
 
           <div className={styles.subContent}>
+            <BuyMeCoffee />
             <RssFeed />
             <BlogCategoryLink heading="Category List" categorys={categorys} />
             <BlogPostLink

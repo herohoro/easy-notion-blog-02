@@ -14,6 +14,7 @@ import {
   PostThumbnail,
   PostLike,
   TwitterTimeline,
+  BuyMeCoffee,
 } from '../../../../../../components/blog-parts'
 import { NextBackPageLink } from '../../../../../../components/nextbackpage'
 import { BackPageLink } from '../../../../../../components/backpage'
@@ -92,6 +93,7 @@ const BlogCategoryBeforeDatePage = async ({
           </div>
 
           <div className={styles.subContent}>
+            <BuyMeCoffee />
             <BlogCategoryLink heading="Category List" categorys={categorys} />
             <BlogTagLink heading="Tag List" tags={tags} />
             <BlogPostLink heading="Recommended" posts={rankedPosts} />

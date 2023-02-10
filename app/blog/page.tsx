@@ -15,6 +15,7 @@ import {
   PostLike,
   TwitterTimeline,
   RssFeed,
+  BuyMeCoffee,
 } from '../../components/blog-parts'
 import styles from '../../styles/blog.module.css'
 import {
@@ -77,6 +78,7 @@ const BlogPage = async () => {
           </div>
 
           <div className={styles.subContent}>
+            <BuyMeCoffee />
             <RssFeed />
             <BlogCategoryLink heading="Category List" categorys={categorys} />
             <BlogTagLink heading="Tag List" tags={tags} />
