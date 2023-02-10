@@ -233,7 +233,7 @@ export const BuyMeCoffee = () => (
   <div className={styles.buyMeCoffee}>
     <a
       href="https://www.buymeacoffee.com/horomi"
-      target="_blank"
+      rel="noreferrer"
       style={{ textAlign: 'center' }}
     >
       <Image
