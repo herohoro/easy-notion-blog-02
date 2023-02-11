@@ -47,6 +47,13 @@ const HeaderTsuku = () => {
           ))}
         </ul>
       </header>
+      <div
+        style={{
+          width: '100%',
+          height: '352px',
+          backgroundColor: '#fc8b534b',
+        }}
+      ></div>
     </div>
   )
 }
