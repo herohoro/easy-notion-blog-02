@@ -1,131 +1,195 @@
-import Link from 'next/link'
 import { NEXT_PUBLIC_SITE_TITLE } from './server-constants'
 import GoogleAnalytics from '../components/google-analytics'
 import styles from '../styles/page.module.css'
-import {
-  getPosts,
-  getRankedPosts,
-  getAllTags,
-  getAllBlocksByBlockId,
-  getAllCategorys,
-} from '../lib/notion/client'
-import { INDEX_PAGE_ID } from '../app/server-constants'
-import { getTagLink } from '../lib/blog-helpers'
+
 import Image from 'next/image'
-import NotionBlocks from '../components/notion-block'
-import SecStyles from '../styles/sec-notion.module.css'
-import {
-  BlogPostLink,
-  BlogTagLink,
-  TwitterTimeline,
-  BlogCategoryLink,
-  BuyMeCoffee,
-} from '../components/blog-parts'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
 
 const RootPage = async () => {
-  const [blocks, posts, rankedPosts, tags, categorys] = await Promise.all([
-    getAllBlocksByBlockId(INDEX_PAGE_ID),
-    getPosts(),
-    getRankedPosts(),
-    getAllTags(),
-    getAllCategorys(),
-  ])
   return (
     <>
       <GoogleAnalytics pageTitle={NEXT_PUBLIC_SITE_TITLE} />
       <div className={styles.container}>
-        <div className={styles.mainContent}>
-          <div className={styles.flexTagsMain}>
-            {tags.map((tag) => {
-              if (tag === 'README' || tag === 'Q&A') {
-                return (
-                  <div className={styles.tagMain}>
-                    <Link
-                      href={getTagLink(tag)}
-                      style={{
-                        display: 'block',
-                        textAlign: 'center',
-                        fontWeight: 'bold',
-                        textShadow: '0 2px 5px rgb(0 0 0 / 50%)',
-                      }}
-                    >
-                      easy-notion-blog&apos; s {tag}
-                    </Link>
-                  </div>
-                )
-              } else {
-                return null
-              }
-            })}
-            {/* 奇数だからお休み */}
-            {/* <div className={styles.moreSearch}>
-          <Link href="/blog" passHref>
-            <p> 🔍　to Blog List </p>
-          </Link>
-        </div> */}
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Image
+        <div className={styles.onlyContent}>
+          <div style={{ textAlign: 'center' }}>
+            {/* <Image
               src="/hero-room.jpg"
               width={300}
               height={300}
               style={{ objectFit: 'contain', width: '100%' }}
               alt=""
-            />
-          </div>
-          <NotionBlocks blocks={blocks} />
-          <div className={SecStyles.pcode}>
-            <iframe
-              src="https://bae.herohoro.com/%E3%83%89%E3%83%83%E3%83%88/index.html"
-              width="100%"
-              height="100%"
-              scrolling="no"
-            ></iframe>
-          </div>
-        </div>
+            /> */}
 
-        <div className={styles.subContent}>
-          <BuyMeCoffee />
-          <BlogCategoryLink heading="Category List" categorys={categorys} />
-          <BlogTagLink heading="Tag List" tags={tags} />
-          <h3>Prolile</h3>
-          <hr />
-          <div className={styles.flexWraper}>
-            <Image
-              src="/profile.png"
-              width={200}
-              height={200}
-              style={{ objectFit: 'contain' }}
-              alt=""
-            />
-            <Image
-              src="/notion-essentials-badge.png"
-              width={80}
-              height={80}
-              style={{ objectFit: 'contain' }}
-              alt=""
-            />
-          </div>
-          <ul>
-            <li>勉強が趣味</li>
-            <li>教えるの好き</li>
-            <li>オンライン学習塾で５画面を操り指導(自称：職人)</li>
-            <li>元教員・介護士</li>
-            <li>家の中では無限大</li>
-          </ul>
-          <h3>Study TimeLine</h3>
-          <hr />
-          <iframe
-            src="https://notion2charts.com/embed/4a0acf85-e27d-4abe-bca6-efff7c2db54c"
-            width="100%"
-            height="400"
-          ></iframe>
+            <div style={{ padding: '100px' }}>
+              <h2
+                style={{
+                  fontSize: '3.25em',
+                  lineHeight: '1.25',
+                  fontWeight: 'bold',
+                }}
+              >
+                {NEXT_PUBLIC_SITE_TITLE}
+              </h2>
+              <p
+                style={{
+                  fontSize: '1em',
+                  lineHeight: '1.75',
+                  fontWeight: '400',
+                }}
+              >
+                Aesthetic Cocumentarian
+              </p>
+            </div>
+            <div className={styles.buttonSection}>
+              <div className={styles.buttonFlex}>
+                <div
+                  style={{
+                    maxWidth: '100%',
+                  }}
+                >
+                  <span>Work</span>
+                </div>
+              </div>
+            </div>
 
-          <BlogPostLink heading="Recommended" posts={rankedPosts} />
-          <TwitterTimeline />
+            <div className={styles.hr}></div>
+            <div
+              style={{
+                backgroundColor: 'rgba(31,33,49,0.3)',
+                fontSize: '0.75rem',
+                height: '1.375rem',
+                lineHeight: '1.375rem',
+                width: '100%',
+                position: 'relative',
+                display: 'flex',
+                padding: '0 0.6rem',
+                color: '#e6eb2f',
+              }}
+            >
+              <span
+                style={{
+                  borderTop: 'dashed 2px',
+                  height: 'inherit',
+                  flexGrow: '1',
+                  position: 'relative',
+                  top: 'calc(50% - 1px)',
+                }}
+              >
+                &nbsp;
+              </span>
+              <span style={{ padding: '0 0.6rem' }}>#work</span>
+              <span
+                style={{
+                  borderTop: 'dashed 2px',
+                  height: 'inherit',
+                  flexGrow: '1',
+                  position: 'relative',
+                  top: 'calc(50% - 1px)',
+                }}
+              >
+                &nbsp;
+              </span>
+            </div>
+            <div className={styles.sectionContainer}>
+              <div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    gap: '2rem',
+                  }}
+                >
+                  <div className={styles.galleryCard}>
+                    <div
+                      style={{
+                        backgroundColor: '#dfdddd',
+                        width: '1100px',
+                        height: '368px',
+                      }}
+                    ></div>
+                    <p>テキストテキスト</p>
+                  </div>
+                  <div className={styles.galleryCard}>
+                    <div
+                      style={{
+                        backgroundColor: '#dfdddd',
+                        width: '500px',
+                        height: '390px',
+                      }}
+                    ></div>
+                    <p>テキストテキスト</p>
+                  </div>
+                  <div className={styles.galleryCard}>
+                    <div
+                      style={{
+                        backgroundColor: '#dfdddd',
+                        width: '500px',
+                        height: '390px',
+                      }}
+                    ></div>
+                    <p>テキストテキスト</p>
+                  </div>
+                  <div className={styles.galleryCard}>
+                    <div
+                      style={{
+                        backgroundColor: '#dfdddd',
+                        width: '500px',
+                        height: '390px',
+                      }}
+                    ></div>
+                    <p>テキストテキスト</p>
+                  </div>
+                  <div className={styles.galleryCard}>
+                    <div
+                      style={{
+                        backgroundColor: '#dfdddd',
+                        width: '500px',
+                        height: '390px',
+                      }}
+                    ></div>
+                    <p>テキストテキスト</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.hr}></div>
+            <div className={styles.sectionContainer}>
+              <div
+                style={{
+                  height: '300px',
+                  backgroundColor: '#dfdddd',
+                  width: '40%',
+                }}
+              ></div>
+              <div style={{ width: '60%' }}>
+                <h3>About</h3>
+                <p style={{ textAlign: 'left' }}>
+                  テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+              </div>
+            </div>
+            <div className={styles.hr}></div>
+            <div className={styles.buttonSection}>
+              <div className={styles.buttonFlex}>
+                <div
+                  style={{
+                    maxWidth: '100%',
+                  }}
+                >
+                  <span>Contact</span>
+                </div>
+              </div>
+            </div>
+            <h2 style={{ marginTop: '200px' }}>これからtsukurun</h2>
+            <p>
+              自分のやりたいことを探して
+              <br />
+              このページをデザインする
+            </p>
+          </div>
         </div>
       </div>
     </>
