@@ -55,7 +55,16 @@
   padding: 10px 10px;
   background: var(--hero-point-bg);
 }
-
+@media (max-width: 900px) {
+  .header {
+    display: block;
+  }
+  .header ul,
+  .header h1 {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 600px) {
   .header {
     padding: 0.5em 0;
