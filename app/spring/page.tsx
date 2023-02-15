@@ -1,4 +1,5 @@
 import MyCompoPalla from './MyCompoPalla'
+import ContentBlock from './pallaContent'
 import styles from '../../styles/page.module.css'
 
 export const revalidate = 60
@@ -10,6 +11,7 @@ const SpringPage = async () => {
       <div className={styles.container}>
         <div className={styles.onlyContent}>
           <MyCompoPalla />
+          <ContentBlock />
         </div>
       </div>
     </>

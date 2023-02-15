@@ -1,6 +1,7 @@
 'use client'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import TextBlock from './pallaText'
+// import ContentBlock from './pallaContent'
+import HeaderTsuku from '../../components/header-tsuku'
 import './palla.css'
 
 function MyCompoPalla() {
@@ -10,32 +11,20 @@ function MyCompoPalla() {
         <ParallaxLayer offset={0} speed={0.25}>
           <div className="animation_layer parallax" id="artback"></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.3}>
-          <div className="animation_layer parallax" id="mountain"></div>
+        <ParallaxLayer offset={0} speed={-0.2}>
+          <div className="animation_layer parallax item" id="jungle1"></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={-0.1}>
-          <div className="animation_layer parallax" id="logoland"></div>
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.3}>
-          <div className="animation_layer parallax" id="jungle1"></div>
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.35}>
-          <div className="animation_layer parallax" id="jungle2"></div>
+        <ParallaxLayer offset={0} speed={0.8}>
+          <div className="animation_layer parallax item" id="jungle2"></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0.5}>
-          <div className="animation_layer parallax" id="jungle3"></div>
+          <div className="animation_layer parallax item" id="jungle3"></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0.45}>
-          <div className="animation_layer parallax" id="jungle4"></div>
+          <div className="animation_layer parallax item" id="jungle4"></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.4}>
-          <div className="animation_layer parallax" id="manonmountain"></div>
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.35}>
-          <div className="animation_layer parallax" id="jungle5"></div>
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0.25}>
-          <TextBlock />
+        <ParallaxLayer offset={0} speed={-0.2}>
+          <div className="animation_layer parallax item" id="jungle5"></div>
         </ParallaxLayer>
       </Parallax>
     </div>
