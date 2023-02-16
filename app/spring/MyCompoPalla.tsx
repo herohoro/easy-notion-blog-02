@@ -3,28 +3,48 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 // import ContentBlock from './pallaContent'
 import HeaderTsuku from '../../components/header-tsuku'
 import './palla.css'
+import ContentBlock from './pallaContent'
+import ContentBlock02 from './pallaContent02'
+import ContentBlock03 from './pallaContent03'
+import ContentBlock04 from './pallaContent04'
 
 function MyCompoPalla() {
   return (
     <div className="App">
-      <Parallax pages={2} style={{ top: '0', left: '0' }} className="animation">
+      <Parallax pages={5} style={{ top: '0', left: '0' }} className="animation">
         <ParallaxLayer offset={0} speed={0.25}>
-          <div className="animation_layer parallax" id="artback"></div>
+          <div className="animation_layer parallax item" id="artback"></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={-0.2}>
           <div className="animation_layer parallax item" id="jungle1"></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.8}>
+        <ParallaxLayer offset={0} speed={0.2}>
           <div className="animation_layer parallax item" id="jungle2"></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.5}>
+        <ParallaxLayer offset={0} speed={0.2}>
           <div className="animation_layer parallax item" id="jungle3"></div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.45}>
+        <ParallaxLayer offset={0} speed={0.5}>
           <div className="animation_layer parallax item" id="jungle4"></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={-0.2}>
           <div className="animation_layer parallax item" id="jungle5"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={-0.25}>
+          <HeaderTsuku />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={0.5} id="textblock">
+          <ContentBlock />
+        </ParallaxLayer>
+        <ParallaxLayer offset={2} speed={0.5} id="textblock">
+          <ContentBlock02 />
+        </ParallaxLayer>
+        <ParallaxLayer offset={3} speed={0.5} id="textblock">
+          <ContentBlock03 />
+        </ParallaxLayer>
+        <ParallaxLayer offset={4} speed={0.5} id="textblock">
+          <ContentBlock04 />
         </ParallaxLayer>
       </Parallax>
     </div>
