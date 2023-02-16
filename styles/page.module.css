@@ -200,10 +200,10 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  border-color: rgba(61, 61, 61, 0.21);
+  /* border-color: rgba(61, 61, 61, 0.21);
   border-style: solid;
   border-width: 1px;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem; */
 }
 .sectionContainer > div {
   padding: 4rem 4rem;
