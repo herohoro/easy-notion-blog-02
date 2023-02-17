@@ -8,6 +8,12 @@
   position: relative;
   z-index: 10;
 }
+.basePage {
+  background: #f2edde;
+}
+.bottonPosition {
+  background-position: bottom center;
+}
 
 .animation_layer {
   background-position: bottom center;
@@ -21,8 +27,8 @@
 }
 
 .animation_layer.item {
-  background-repeat: repeat-y;
-  background-position: top center;
+  background-repeat: repeat-x;
+  background-position: center center;
 }
 #artback {
   background-image: url(./images/backdesk02.png);
