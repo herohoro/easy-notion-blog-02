@@ -1,5 +1,5 @@
-import styles from '../../styles/page.module.css'
-import { NEXT_PUBLIC_SITE_TITLE } from '../server-constants'
+import styles from '../../../styles/page.module.css'
+import { NEXT_PUBLIC_SITE_TITLE } from '../../server-constants'
 
 function ContentBlock() {
   return (
