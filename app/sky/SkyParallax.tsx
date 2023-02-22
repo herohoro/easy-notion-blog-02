@@ -13,8 +13,12 @@ const url = (name: string, wrap = false) =>
 export default function App() {
   const parallax = useRef<IParallax>(null!)
   return (
-    <div style={{ width: '100%', height: '100%', background: '#253237' }}>
-      <Parallax ref={parallax} pages={3}>
+    <div style={{ width: '100%', height: '100%', background: '#f2edde' }}>
+      <Parallax
+        ref={parallax}
+        pages={3}
+        style={{ background: '#253237', top: '0', left: '0' }}
+      >
         <ParallaxLayer
           offset={1}
           speed={1}
