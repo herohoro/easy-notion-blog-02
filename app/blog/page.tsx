@@ -1,4 +1,10 @@
-import { NUMBER_OF_POSTS_PER_PAGE } from '../../app/server-constants'
+import type { Metadata } from 'next'
+import {
+  NEXT_PUBLIC_URL,
+  NEXT_PUBLIC_SITE_TITLE,
+  NEXT_PUBLIC_SITE_DESCRIPTION,
+  NUMBER_OF_POSTS_PER_PAGE,
+} from '../../app/server-constants'
 import GoogleAnalytics from '../../components/google-analytics'
 import {
   BlogPostLink,
@@ -31,6 +37,36 @@ import Image from 'next/image'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const title = `Blog - ${NEXT_PUBLIC_SITE_TITLE}`
+  const description = NEXT_PUBLIC_SITE_DESCRIPTION
+  const url = NEXT_PUBLIC_URL ? new URL('/blog', NEXT_PUBLIC_URL) : undefined
+  const imageURL = new URL('/hero-room.jpg', NEXT_PUBLIC_URL)
+
+  const metadata: Metadata = {
+    title: title,
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: title,
+      type: 'website',
+      images: [{ url: imageURL }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: title,
+      description: description,
+      images: [{ url: imageURL }],
+    },
+    alternates: {
+      canonical: url,
+    },
+  }
+
+  return metadata
+}
 
 const BlogPage = async () => {
   const [posts, firstPost, rankedPosts, tags, categorys] = await Promise.all([
