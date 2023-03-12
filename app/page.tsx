@@ -1,5 +1,6 @@
 import { NEXT_PUBLIC_SITE_TITLE } from './server-constants'
 import GoogleAnalytics from '../components/google-analytics'
+import Transition from '../components/spring/transition'
 import styles from '../styles/page.module.css'
 
 // import Image from 'next/image'
@@ -13,12 +14,7 @@ const RootPage = async () => {
       <GoogleAnalytics pageTitle={NEXT_PUBLIC_SITE_TITLE} />
       <div className={styles.container}>
         <div className={styles.onlyContent}>
-          <h2 style={{ marginTop: '200px' }}>これからtsukurun</h2>
-          <p>
-            自分のやりたいことを探して
-            <br />
-            このページをデザインする
-          </p>
+          <Transition />
         </div>
       </div>
     </>
