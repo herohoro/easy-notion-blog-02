@@ -36,10 +36,15 @@ export default function App() {
     ref.current.push(
       setTimeout(() => set(['herohoro', 'ブログ', 'with Notion']), 2000)
     )
-    ref.current.push(setTimeout(() => set(['herohoro', 'with Notion']), 5000))
+    ref.current.push(setTimeout(() => set(['herohoro', 'with Notion']), 4000))
     ref.current.push(
-      setTimeout(() => set(['herohoro', 'デザイン', 'with Notion']), 8000)
+      setTimeout(() => set(['herohoro', 'デザイン', 'with Notion']), 6500)
     )
+    ref.current.push(setTimeout(() => set(['herohoro', 'with Notion']), 8500))
+    ref.current.push(
+      setTimeout(() => set(['herohoro', 'Happy', 'with Notion']), 12500)
+    )
+    ref.current.push(setTimeout(() => set(['Happy', 'with Notion']), 15000))
   }, [])
 
   useEffect(() => {
