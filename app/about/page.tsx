@@ -20,6 +20,7 @@ import {
   TwitterTimeline,
   BlogCategoryLink,
   BuyMeCoffee,
+  NotionLink,
 } from '../../components/blog-parts'
 
 export const revalidate = 60
@@ -89,6 +90,7 @@ const RootPage = async () => {
 
         <div className={styles.subContent}>
           <BuyMeCoffee />
+          <NotionLink />
           <BlogCategoryLink heading="Category List" categorys={categorys} />
           <BlogTagLink heading="Tag List" tags={tags} />
           <h3>Prolile</h3>

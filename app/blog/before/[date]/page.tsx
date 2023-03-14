@@ -23,6 +23,7 @@ import {
   TwitterTimeline,
   RssFeed,
   BuyMeCoffee,
+  NotionLink,
 } from '../../../../components/blog-parts'
 import { NextBackPageLink } from '../../../../components/nextbackpage'
 import { BackPageLink } from '../../../../components/backpage'
@@ -83,6 +84,7 @@ const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
           </div>
           <div className={styles.subContent}>
             <BuyMeCoffee />
+            <NotionLink />
             <RssFeed />
             <BlogCategoryLink heading="Category List" categorys={categorys} />
             <BlogTagLink heading="Tag List" tags={tags} />

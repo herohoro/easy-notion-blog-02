@@ -16,6 +16,7 @@ import {
   BlogTagLink,
   TwitterTimeline,
   BlogCategoryLink,
+  NotionLink,
 } from '../../components/blog-parts'
 
 export const revalidate = 60
@@ -68,6 +69,7 @@ const MapPage = async () => {
         </div>
 
         <div className={styles.subContent}>
+          <NotionLink />
           <BlogCategoryLink heading="Category List" categorys={categorys} />
           <BlogTagLink heading="Tag List" tags={tags} />
           <h3>Prolile</h3>

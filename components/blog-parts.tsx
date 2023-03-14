@@ -262,6 +262,19 @@ export const TwitterTimeline = () => (
     />
   </div>
 )
+export const NotionLink = () => (
+  <div>
+    <h3>表示されない！？</h3>
+    <hr />
+    <Link href="https://sparkling-cinnamon-3f9.notion.site/Home-e1b20d814f0343b19e953c47adad6190">
+      Notion版herohoroブログ公開中だよ(^o^)
+    </Link>
+    <br />
+    <br />
+    <br />
+  </div>
+)
+
 export const RssFeed = () => (
   <div>
     <h3>新着記事を通知したい？？</h3>

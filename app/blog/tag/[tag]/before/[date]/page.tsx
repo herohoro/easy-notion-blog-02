@@ -16,6 +16,7 @@ import {
   //   ReadMoreLink,
   TwitterTimeline,
   BuyMeCoffee,
+  NotionLink,
 } from '../../../../../../components/blog-parts'
 import { NextBackPageLink } from '../../../../../../components/nextbackpage'
 import { BackPageLink } from '../../../../../../components/backpage'
@@ -91,6 +92,7 @@ const BlogTagBeforeDatePage = async ({
 
           <div className={styles.subContent}>
             <BuyMeCoffee />
+            <NotionLink />
             <BlogCategoryLink heading="Category List" categorys={categorys} />
             <BlogTagLink heading="Tag List" tags={tags} />
             <BlogPostLink heading="Recommended" posts={rankedPosts} />
