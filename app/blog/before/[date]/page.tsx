@@ -20,11 +20,11 @@ import {
   PostTitle,
   PostThumbnail,
   PostLike,
-  TwitterTimeline,
   RssFeed,
   BuyMeCoffee,
   NotionLink,
 } from '../../../../components/blog-parts'
+import { TwitterTimeline } from '../../../../components/twitter-timeLine'
 import { NextBackPageLink } from '../../../../components/nextbackpage'
 import { BackPageLink } from '../../../../components/backpage'
 import styles from '../../../../styles/blog.module.css'

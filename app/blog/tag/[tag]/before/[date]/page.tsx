@@ -14,10 +14,10 @@ import {
   PostThumbnail,
   PostLike,
   //   ReadMoreLink,
-  TwitterTimeline,
   BuyMeCoffee,
   NotionLink,
 } from '../../../../../../components/blog-parts'
+import { TwitterTimeline } from '../../../../../../components/twitter-timeLine'
 import { NextBackPageLink } from '../../../../../../components/nextbackpage'
 import { BackPageLink } from '../../../../../../components/backpage'
 import {

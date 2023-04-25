@@ -1,10 +1,7 @@
 import Link from 'next/link'
 import GoogleAnalytics from '../../components/google-analytics'
-import {
-  BlogTagLink,
-  BlogCategoryLink,
-  TwitterTimeline,
-} from '../../components/blog-parts'
+import { BlogTagLink, BlogCategoryLink } from '../../components/blog-parts'
+import { TwitterTimeline } from '../../components/twitter-timeLine'
 import styles from '../../styles/blog.module.css'
 import { getAllTags, getAllCategorys } from '../../lib/notion/client'
 import { getEditTimeStr } from '../../lib/blog-helpers'

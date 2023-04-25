@@ -14,7 +14,6 @@ import {
   PostTagsSlug,
   PostCategorySlug,
   // PostThumbnailSlug,
-  TwitterTimeline,
   ClosePhrase,
   IndexList,
   NewPostList,
@@ -22,6 +21,7 @@ import {
   BuyMeCoffee,
   NotionLink,
 } from '../../../components/blog-parts'
+import { TwitterTimeline } from '../../../components/twitter-timeLine'
 import SocialButtons from '../../../components/social-buttons'
 import styles from '../../../styles/blog.module.css'
 import { getBlogLink } from '../../../lib/blog-helpers'

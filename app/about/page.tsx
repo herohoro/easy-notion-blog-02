@@ -17,11 +17,11 @@ import SecStyles from '../../styles/sec-notion.module.css'
 import {
   BlogPostLink,
   BlogTagLink,
-  TwitterTimeline,
   BlogCategoryLink,
   BuyMeCoffee,
   NotionLink,
 } from '../../components/blog-parts'
+import { TwitterTimeline } from '../../components/twitter-timeLine'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
