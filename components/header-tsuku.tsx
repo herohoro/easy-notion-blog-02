@@ -1,6 +1,3 @@
-'use client'
-
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { NEXT_PUBLIC_SITE_TITLE } from '../app/server-constants'
@@ -12,8 +9,6 @@ interface NavItem {
 }
 
 const HeaderTsuku = () => {
-  const pathname = usePathname()
-
   const navItems: NavItem[] = [
     { label: 'Home', path: '/' },
     { label: 'Map', path: '/map' },
@@ -40,9 +35,7 @@ const HeaderTsuku = () => {
         <ul className={styles.naviContent}>
           {navItems.map(({ label, path }) => (
             <li key={label}>
-              <Link href={path} className={pathname === path ? 'active' : null}>
-                {label}
-              </Link>
+              <Link href={path}>{label}</Link>
             </li>
           ))}
         </ul>

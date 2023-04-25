@@ -13,11 +13,12 @@ import {
   PostTitle,
   PostThumbnail,
   PostLike,
-  TwitterTimeline,
   RssFeed,
   BuyMeCoffee,
   NotionLink,
 } from '../../components/blog-parts'
+
+import { TwitterTimeline } from '../../components/twitter-timeLine'
 import styles from '../../styles/blog.module.css'
 import {
   getPosts,

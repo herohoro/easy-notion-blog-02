@@ -1,7 +1,3 @@
-'use client'
-
-import React from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
   getBeforeLink,
@@ -16,7 +12,6 @@ export const NextBackPageLink = ({
   tag = '',
   category = '',
 }) => {
-  const router = useRouter()
   if (!firstPost) return null
   if (posts.length === 0) return null
 
@@ -24,10 +19,16 @@ export const NextBackPageLink = ({
 
   if (firstPost.Date === lastPost.Date) return null
 
+  const handleBack = () => {
+    if (typeof window !== 'undefined') {
+      window.history.back()
+    }
+  }
+
   return (
     <div className={styles.nextContainer}>
       <div className={styles.buttonSubContainer}>
-        <a className={styles.backButton} onClick={() => router.back()}>
+        <a className={styles.backButton} onClick={handleBack}>
           {' '}
           ＜ Back{' '}
         </a>
