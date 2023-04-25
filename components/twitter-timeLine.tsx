@@ -1,3 +1,5 @@
+'use client'
+
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
 
 import styles from '../styles/blog-parts.module.css'
