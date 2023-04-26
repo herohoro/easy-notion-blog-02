@@ -40,10 +40,10 @@ const RootPage = async () => {
       <div className={styles.container}>
         <div className={styles.mainContent}>
           <div className={styles.flexTagsMain}>
-            {tags.map((tag) => {
+            {tags.map((tag, index) => {
               if (tag === 'README' || tag === 'Q&A') {
                 return (
-                  <div className={styles.tagMain}>
+                  <div className={styles.tagMain} key={index}>
                     <Link
                       href={getTagLink(tag)}
                       style={{
