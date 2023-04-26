@@ -1,10 +1,4 @@
-import Link from 'next/link'
-import {
-  getBeforeLink,
-  getTagBeforeLink,
-  getCategoryBeforeLink,
-} from '../lib/blog-helpers'
-import styles from '../styles/blog-parts.module.css'
+import { NextBackPageLinkClient } from './nextbackpage.client'
 
 export const NextBackPageLink = ({
   firstPost,
@@ -19,32 +13,11 @@ export const NextBackPageLink = ({
 
   if (firstPost.Date === lastPost.Date) return null
 
-  const handleBack = () => {
-    if (typeof window !== 'undefined') {
-      window.history.back()
-    }
-  }
-
   return (
-    <div className={styles.nextContainer}>
-      <div className={styles.buttonSubContainer}>
-        <a className={styles.backButton} onClick={handleBack}>
-          {' '}
-          ＜ Back{' '}
-        </a>
-        <Link
-          href={
-            tag
-              ? getTagBeforeLink(tag, lastPost.Date)
-              : category
-              ? getCategoryBeforeLink(category, lastPost.Date)
-              : getBeforeLink(lastPost.Date)
-          }
-          passHref
-        >
-          <div className={styles.nextPageLink}>Next ＞</div>
-        </Link>
-      </div>
-    </div>
+    <NextBackPageLinkClient
+      lastPostDate={lastPost.Date}
+      tag={tag}
+      category={category}
+    />
   )
 }
