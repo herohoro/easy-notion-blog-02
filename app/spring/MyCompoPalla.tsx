@@ -1,7 +1,6 @@
 'use client'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import Footer from '../../components/footer'
-// import ContentBlock from './pallaContent'
 import HeaderTsuku from '../../components/header-tsuku'
 import './palla.css'
 import ContentBlock from './components/pallaContent'
