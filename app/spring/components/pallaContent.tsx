@@ -4,14 +4,6 @@ import { NEXT_PUBLIC_SITE_TITLE } from '../../server-constants'
 function ContentBlock() {
   return (
     <div style={{ textAlign: 'center' }}>
-      {/* <Image
-              src="/hero-room.jpg"
-              width={300}
-              height={300}
-              style={{ objectFit: 'contain', width: '100%' }}
-              alt=""
-            /> */}
-
       <div style={{ padding: '100px' }}>
         <h2
           style={{
