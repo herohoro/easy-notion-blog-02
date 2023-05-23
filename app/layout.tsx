@@ -1,5 +1,6 @@
 import HeaderTsuku from '../components/header-tsuku'
 import {
+  NEXT_PUBLIC_URL,
   NEXT_PUBLIC_SITE_TITLE,
   NEXT_PUBLIC_SITE_DESCRIPTION,
 } from './server-constants'
@@ -9,6 +10,7 @@ import '../styles/syntax-coloring.css'
 import styles from '../styles/shared.module.css'
 
 export const metadata = {
+  metadataBase: NEXT_PUBLIC_URL ? new URL(NEXT_PUBLIC_URL) : undefined,
   title: NEXT_PUBLIC_SITE_TITLE,
   description: NEXT_PUBLIC_SITE_DESCRIPTION,
 }
