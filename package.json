@@ -27,7 +27,7 @@
     "metascraper-description": "^5.32.3",
     "metascraper-image": "^5.32.3",
     "metascraper-title": "^5.32.3",
-    "next": "^13.2.1",
+    "next": "^13.3.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
