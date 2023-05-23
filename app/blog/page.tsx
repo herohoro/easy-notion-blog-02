@@ -4,7 +4,7 @@ import {
   NEXT_PUBLIC_SITE_TITLE,
   NEXT_PUBLIC_SITE_DESCRIPTION,
   NUMBER_OF_POSTS_PER_PAGE,
-} from '../../app/server-constants'
+} from '../server-constants'
 import GoogleAnalytics from '../../components/google-analytics'
 import {
   BlogPostLink,
