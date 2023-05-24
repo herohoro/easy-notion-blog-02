@@ -98,7 +98,6 @@ const ApiOgImage = async function (req: NextRequest) {
           <div
             style={{
               display: 'flex',
-              // backgroundColor: '#fff',
               width: '1040px',
               height: '490px',
               margin: 'auto',
@@ -116,7 +115,6 @@ const ApiOgImage = async function (req: NextRequest) {
           <div
             style={{
               display: 'flex',
-              // backgroundColor: '#fff',
               width: '1040px',
               height: '100px',
               margin: 'auto',
@@ -129,7 +127,6 @@ const ApiOgImage = async function (req: NextRequest) {
             <div
               style={{
                 display: 'flex',
-                // backgroundColor: '#fff',
                 width: '640px',
                 height: '64px',
                 margin: 'auto',
@@ -143,7 +140,6 @@ const ApiOgImage = async function (req: NextRequest) {
             <div
               style={{
                 display: 'flex',
-                // backgroundColor: '#fff',
                 width: '400px',
                 height: '64px',
                 margin: 'auto',
