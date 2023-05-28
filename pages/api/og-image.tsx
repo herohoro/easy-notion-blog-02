@@ -1,5 +1,4 @@
-import { NextRequest } from 'next/server'
-import { ImageResponse } from 'next/server'
+import { NextRequest, ImageResponse } from 'next/server'
 import { NEXT_PUBLIC_SITE_TITLE } from '../../app/server-constants'
 import { Post } from '../../lib/notion/interfaces'
 
