@@ -59,10 +59,7 @@ const ApiOgImage = async function (req: NextRequest) {
     )
   }
 
-  const fontURL = new URL(
-    '../../assets/NotoSansJP-Medium.woff',
-    import.meta.url
-  )
+  const fontURL = new URL('assets/NotoSansJP-Medium.woff', import.meta.url)
   const fontData = await (await fetch(fontURL)).arrayBuffer()
 
   return new ImageResponse(
