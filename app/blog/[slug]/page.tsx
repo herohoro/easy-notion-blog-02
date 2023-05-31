@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { NEXT_PUBLIC_URL, NEXT_PUBLIC_SITE_TITLE } from '../../server-constants'
-import { Post } from '../../../lib/notion/interfaces'
 import GoogleAnalytics from '../../../components/google-analytics'
 import {
   BlogPostLink,
@@ -38,7 +37,8 @@ import {
 } from '../../../lib/notion/client'
 
 export const revalidate = 30
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
+export const dynamic = 'force-static'
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   const post = await getPostBySlug(params.slug)
