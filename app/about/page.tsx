@@ -3,7 +3,6 @@ import { NEXT_PUBLIC_SITE_TITLE } from '../server-constants'
 import GoogleAnalytics from '../../components/google-analytics'
 import styles from '../../styles/page.module.css'
 import {
-  getPosts,
   getRankedPosts,
   getAllTags,
   getAllBlocksByBlockId,
@@ -27,9 +26,8 @@ export const revalidate = 60
 export const dynamic = 'force-dynamic'
 
 const RootPage = async () => {
-  const [blocks, posts, rankedPosts, tags, categorys] = await Promise.all([
+  const [blocks, rankedPosts, tags, categorys] = await Promise.all([
     getAllBlocksByBlockId(INDEX_PAGE_ID),
-    getPosts(),
     getRankedPosts(),
     getAllTags(),
     getAllCategorys(),

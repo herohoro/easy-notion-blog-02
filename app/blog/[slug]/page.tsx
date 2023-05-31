@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
-import {
-  NEXT_PUBLIC_URL,
-  NEXT_PUBLIC_SITE_TITLE,
-} from '../../server-constants'
+import { NEXT_PUBLIC_URL, NEXT_PUBLIC_SITE_TITLE } from '../../server-constants'
 import { Post } from '../../../lib/notion/interfaces'
 import GoogleAnalytics from '../../../components/google-analytics'
 import {
@@ -47,8 +44,12 @@ export async function generateMetadata({ params }): Promise<Metadata> {
   const post = await getPostBySlug(params.slug)
   const title = `${post?.Title} - ${NEXT_PUBLIC_SITE_TITLE}`
   const description = post?.Excerpt
-  const url = NEXT_PUBLIC_URL ? new URL(getBlogLink(post?.Slug || ''), NEXT_PUBLIC_URL) : undefined
-  const images = NEXT_PUBLIC_URL ? [{ url: new URL(`/api/og-image?slug=${post?.Slug}`, NEXT_PUBLIC_URL) }] : []
+  const url = NEXT_PUBLIC_URL
+    ? new URL(getBlogLink(post?.Slug || ''), NEXT_PUBLIC_URL)
+    : undefined
+  const images = NEXT_PUBLIC_URL
+    ? [{ url: new URL(`/api/og-image?slug=${post?.Slug}`, NEXT_PUBLIC_URL) }]
+    : []
 
   const metadata: Metadata = {
     title: title,
@@ -97,10 +98,6 @@ const BlogSlugPage = async ({ params: { slug } }) => {
       getPostsByTag(post.Tags[0], 6),
       getAllCategorys(),
     ])
-
-  const otherPostsHavingSameTag = sameTagPosts.filter(
-    (p: Post) => p.Slug !== post.Slug
-  )
 
   return (
     <>
