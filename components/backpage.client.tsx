@@ -1,3 +1,4 @@
+'use client'
 import styles from '../styles/blog-parts.module.css'
 
 export const BackPageLinkClient = () => {
