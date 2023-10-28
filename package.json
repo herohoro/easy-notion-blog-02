@@ -16,7 +16,7 @@
     }
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.2",
+    "@notionhq/client": "^2.2.13",
     "@react-spring/parallax": "^9.6.1",
     "@react-spring/web": "^9.6.1",
     "@vercel/og": "^0.0.21",
@@ -27,7 +27,7 @@
     "metascraper-description": "^5.32.3",
     "metascraper-image": "^5.32.3",
     "metascraper-title": "^5.32.3",
-    "next": "13.5",
+    "next": "^14.0.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
