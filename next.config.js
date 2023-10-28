@@ -29,17 +29,26 @@ if (!DATABASE_ID) {
 
 module.exports = {
   images: {
-    domains: [
-      's3.us-west-2.amazonaws.com',
-      'images.unsplash.com',
-      'cdn.buymeacoffee.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 's3.us-west-2.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.buymeacoffee.com',
+      },
     ],
   },
   async rewrites() {
     return [
       { source: '/atom', destination: '/api/atom' },
       { source: '/sitemap', destination: '/api/sitemap' },
-    ]
+    ];
   },
 
   outputFileTracing: false,
@@ -47,4 +56,4 @@ module.exports = {
   experimental: {
     appDir: true,
   },
-}
+};
