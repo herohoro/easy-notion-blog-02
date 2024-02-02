@@ -28,14 +28,8 @@ const ApiOgImage = async function (req: NextRequest) {
 
   const slug = searchParams.get('slug')
 
-  const url =
-    process.env.CONTEXT === 'production'
-      ? process.env.NEXT_PUBLIC_URL
-      : process.env.DEPLOY_PRIME_URL
-      || `http://localhost:${process.env.PORT || 3000}`
-
   const post: Post = await (
-    await fetch(new URL(`/api/posts/${slug}`, url))
+    await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/${slug}`)
   ).json()
   if (!post) {
     throw new Error(`post not found. slug: ${slug}`)
