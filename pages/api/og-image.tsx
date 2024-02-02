@@ -29,9 +29,10 @@ const ApiOgImage = async function (req: NextRequest) {
   const slug = searchParams.get('slug')
 
   const url =
-    process.env.VERCEL === '1'
-      ? `https://${process.env.VERCEL_URL}`
-      : `http://localhost:${process.env.PORT || 3000}`
+    process.env.CONTEXT === 'production'
+      ? process.env.NEXT_PUBLIC_URL
+      : process.env.DEPLOY_PRIME_URL
+      || `http://localhost:${process.env.PORT || 3000}`
 
   const post: Post = await (
     await fetch(new URL(`/api/posts/${slug}`, url))

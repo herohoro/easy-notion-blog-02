@@ -48,7 +48,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     ? new URL(getBlogLink(post?.Slug || ''), NEXT_PUBLIC_URL)
     : undefined
   const images = NEXT_PUBLIC_URL
-    ? [{ url: new URL('/hero-room.jpg', NEXT_PUBLIC_URL), width: 400, height: 200}]
+    ? [{ url: new URL(`/api/og-image?slug=${post?.Slug}`, NEXT_PUBLIC_URL), width: 400, height: 200}]
     : []
 
   const metadata: Metadata = {
