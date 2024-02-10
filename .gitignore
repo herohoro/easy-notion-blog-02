@@ -34,3 +34,5 @@ yarn-error.log*
 tmp/
 public/notion_images/*
 !public/notion_images/.gitkeep
+
+package-lock.json
