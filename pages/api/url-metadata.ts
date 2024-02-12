@@ -5,6 +5,8 @@ import metascraperDescription from 'metascraper-description'
 import metascraperImage from 'metascraper-image'
 import metascraperTitle from 'metascraper-title'
 
+export const runtime = 'edge'
+
 const metascraper = createMetascraper([metascraperDescription(), metascraperImage(), metascraperTitle()])
 
 const ApiUrlMetadata = async function(req: NextApiRequest, res: NextApiResponse) {

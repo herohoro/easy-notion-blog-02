@@ -24,6 +24,7 @@ import { TwitterTimeline } from '../../components/twitter-timeLine'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
+export const runtime = 'edge'
 
 const RootPage = async () => {
   const [blocks, rankedPosts, tags, categorys] = await Promise.all([

@@ -39,6 +39,7 @@ import {
 export const revalidate = 30
 // export const dynamic = 'force-dynamic'
 export const dynamic = 'force-static'
+export const runtime = 'edge'
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   const post = await getPostBySlug(params.slug)

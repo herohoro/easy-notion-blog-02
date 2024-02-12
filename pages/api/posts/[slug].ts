@@ -2,6 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { getPostBySlug } from '../../../lib/notion/client'
 
+export const runtime = 'edge'
+
 const ApiPost = async function(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
     res.statusCode = 400

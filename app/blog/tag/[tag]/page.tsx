@@ -37,6 +37,7 @@ import {
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
+export const runtime = 'edge'
 
 export async function generateMetadata({
   params: { tag: encodedTag },

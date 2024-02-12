@@ -14,6 +14,7 @@ import Image from 'next/image'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
+export const runtime = 'edge'
 
 const RenderPostsSpace = async () => {
   const [tags, categorys, secPosts, secMessages] = await Promise.all([

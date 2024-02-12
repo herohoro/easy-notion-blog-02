@@ -4,6 +4,8 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { getBlogLink } from '../../lib/blog-helpers'
 import { getAllPosts } from '../../lib/notion/client'
 
+export const runtime = 'edge'
+
 function decode(string) {
   return string
     .replace(/&/g, '&amp;')

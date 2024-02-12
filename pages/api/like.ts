@@ -2,6 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { getPostBySlug, incrementLikes } from '../../lib/notion/client'
 
+export const runtime = 'edge'
+
 const ApiBlogSlug = async function (req: NextApiRequest, res: NextApiResponse) {
   // res.setHeader('Content-Type', 'application/json')
   if (req.method !== 'PUT') {
