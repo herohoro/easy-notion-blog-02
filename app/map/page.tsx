@@ -20,7 +20,7 @@ import {
 import { TwitterTimeline } from '../../components/twitter-timeLine'
 
 export const revalidate = 60
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 const MapPage = async () => {
   const [blocks, rankedPosts, tags, categorys] = await Promise.all([

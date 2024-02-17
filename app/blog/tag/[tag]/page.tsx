@@ -36,7 +36,7 @@ import {
 } from '../../../../lib/notion/client'
 
 export const revalidate = 60
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({
   params: { tag: encodedTag },

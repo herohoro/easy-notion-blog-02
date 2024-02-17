@@ -36,7 +36,7 @@ import {
 // import Image from 'next/image'
 
 export const revalidate = 60
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = `Blog - ${NEXT_PUBLIC_SITE_TITLE}`

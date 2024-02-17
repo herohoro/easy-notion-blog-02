@@ -37,7 +37,7 @@ import {
 
 export const revalidate = 60
 export const dynamicParams = false
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({
   params: { category: encodedCategory },

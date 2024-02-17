@@ -9,7 +9,7 @@ import Transition from '../components/spring/transition'
 import styles from '../styles/page.module.css'
 
 export const revalidate = 60
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = NEXT_PUBLIC_SITE_TITLE
