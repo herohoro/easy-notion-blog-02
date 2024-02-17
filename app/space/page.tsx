@@ -34,7 +34,7 @@ const RenderPostsSpace = async () => {
                 \ 深夜に学習を深める【深夜学習】開催中 /
               </h3>
               <div className={SecStyles.fukidashi}>
-                <Image
+                <img
                   src="/fukidashi.png"
                   width={100}
                   height={100}
@@ -61,7 +61,7 @@ const RenderPostsSpace = async () => {
                 <br />
                 カードのタイトルをクリックするとTwitterのスレッドへ飛ぶのでのぞいてみてね。
               </p>
-              <Image
+              <img
                 src="/neko.jpeg"
                 width={900}
                 height={300}

@@ -22,7 +22,7 @@ const HeaderTsuku = () => {
       <header className={styles.header}>
         <h1>
           <Link href="/">
-            <Image
+            <img
               src="/herohoro_title.png"
               width={200}
               height={50}

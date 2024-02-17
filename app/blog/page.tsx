@@ -86,7 +86,7 @@ const BlogPage = async () => {
         <div className={styles.flexWraper}>
           <div className={styles.mainContent}>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Image
+              <img
                 src="/study-hero.jpeg"
                 width={300}
                 height={200}

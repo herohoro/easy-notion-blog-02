@@ -57,7 +57,7 @@ const MapPage = async () => {
         </div> */}
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Image
+            <img
               src="/study-hero.jpeg"
               width={300}
               height={300}
@@ -75,14 +75,14 @@ const MapPage = async () => {
           <h3>Prolile</h3>
           <hr />
           <div className={styles.flexWraper}>
-            <Image
+            <img
               src="/profile.png"
               width={200}
               height={200}
               style={{ objectFit: 'contain' }}
               alt=""
             />
-            <Image
+            <img
               src="/notion-essentials-badge.png"
               width={80}
               height={80}
