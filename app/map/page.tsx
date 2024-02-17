@@ -9,7 +9,7 @@ import {
   getAllCategorys,
 } from '../../lib/notion/client'
 import { MAP_PAGE_ID } from '../../app/server-constants'
-import Image from 'next/image'
+// import Image from 'next/image'
 import NotionBlocks from '../../components/notion-block'
 import {
   BlogPostLink,

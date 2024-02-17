@@ -10,7 +10,7 @@ import {
 } from '../../lib/notion/client'
 import { INDEX_PAGE_ID } from '../../app/server-constants'
 import { getTagLink } from '../../lib/blog-helpers'
-import Image from 'next/image'
+// import Image from 'next/image'
 import NotionBlocks from '../../components/notion-block'
 import SecStyles from '../../styles/sec-notion.module.css'
 import {

@@ -10,7 +10,7 @@ import {
   getAllSecShinyaPosts,
   getSecShinyaMessage,
 } from '../../lib/sec-notion/client'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'

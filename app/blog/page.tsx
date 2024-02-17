@@ -33,7 +33,7 @@ import {
   getAllTags,
   getAllCategorys,
 } from '../../lib/notion/client'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
