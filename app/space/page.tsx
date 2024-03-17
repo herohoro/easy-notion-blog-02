@@ -31,7 +31,7 @@ const RenderPostsSpace = async () => {
           <div className={styles.mainContent}>
             <div>
               <h3 style={{ textAlign: 'center' }}>
-                \ 深夜に学習を深める【深夜学習】開催中 /
+                \ 未だに一人で学習中 /
               </h3>
               <div className={SecStyles.fukidashi}>
                 <Image
@@ -57,9 +57,7 @@ const RenderPostsSpace = async () => {
                 })}
               </div>
               <p>
-                24:00頃Twitterで課題に取り組む様子をつぶやきだします＼(^o^)／
-                <br />
-                カードのタイトルをクリックするとTwitterのスレッドへ飛ぶのでのぞいてみてね。
+                記録しておくとモチベが上がるので残しています🔥
               </p>
               <Image
                 src="/neko.jpeg"
@@ -78,9 +76,13 @@ const RenderPostsSpace = async () => {
                         </div>
                       </div>
                       <h3>{secPost.date} ~</h3>
-                      <Link href={secPost.URL}>
-                        <div>📝 {secPost.title}</div>
-                      </Link>
+                      {secPost.URL ? (
+                        <Link href={secPost.URL}>
+                          <div>📝 {secPost.title}</div>
+                        </Link>
+                      ) : (
+                        <p>📝 {secPost.title}</p>
+                      )}
                       <p>
                         &#128537;{' '}
                         {secPost.description ? secPost.description : null}
