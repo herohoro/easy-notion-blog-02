@@ -6,7 +6,6 @@ import {
   NEXT_PUBLIC_SITE_DESCRIPTION,
   NUMBER_OF_POSTS_PER_PAGE,
 } from '../../../../../../app/server-constants'
-import GoogleAnalytics from '../../../../../../components/google-analytics'
 import {
   BlogPostLink,
   BlogTagLink,
@@ -98,9 +97,6 @@ const BlogCategoryBeforeDatePage = async ({
 
   return (
     <>
-      <GoogleAnalytics
-        pageTitle={`Posts in ${category} before ${date.split('T')[0]}`}
-      />
       <div className={styles.container}>
         <div className={styles.flexWraper}>
           <div className={styles.mainContent}>

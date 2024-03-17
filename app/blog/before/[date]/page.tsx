@@ -6,7 +6,6 @@ import {
   NEXT_PUBLIC_SITE_DESCRIPTION,
   NUMBER_OF_POSTS_PER_PAGE,
 } from '../../../../app/server-constants'
-import GoogleAnalytics from '../../../../components/google-analytics'
 import {
   getRankedPosts,
   getPostsBefore,
@@ -86,7 +85,6 @@ const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
 
   return (
     <>
-      <GoogleAnalytics pageTitle={`Posts before ${date.split('T')[0]}`} />
       <div className={styles.container}>
         <div className={styles.flexWraper}>
           <div className={styles.mainContent}>

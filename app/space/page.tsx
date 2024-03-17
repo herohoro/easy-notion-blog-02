@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import GoogleAnalytics from '../../components/google-analytics'
 import { BlogTagLink, BlogCategoryLink } from '../../components/blog-parts'
 import { TwitterTimeline } from '../../components/twitter-timeLine'
 import styles from '../../styles/blog.module.css'
@@ -25,7 +24,6 @@ const RenderPostsSpace = async () => {
 
   return (
     <>
-      <GoogleAnalytics pageTitle="Space" />
       <div className={styles.container}>
         <div className={styles.flexWraper}>
           <div className={styles.mainContent}>

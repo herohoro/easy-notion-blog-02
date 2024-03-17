@@ -6,7 +6,6 @@ import {
   NEXT_PUBLIC_SITE_DESCRIPTION,
   NUMBER_OF_POSTS_PER_PAGE,
 } from '../../../../app/server-constants'
-import GoogleAnalytics from '../../../../components/google-analytics'
 import {
   BlogPostLink,
   BlogCategoryLink,
@@ -98,7 +97,6 @@ const BlogTagPage = async ({ params: { tag: encodedTag } }) => {
 
   return (
     <>
-      <GoogleAnalytics pageTitle={`Posts in ${tag}`} />
       <div className={styles.container}>
         <div className={styles.flexWraper}>
           <div className={styles.mainContent}>

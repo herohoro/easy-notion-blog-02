@@ -5,7 +5,6 @@ import {
   NEXT_PUBLIC_SITE_DESCRIPTION,
   NUMBER_OF_POSTS_PER_PAGE,
 } from '../server-constants'
-import GoogleAnalytics from '../../components/google-analytics'
 import {
   BlogPostLink,
   BlogTagLink,
@@ -81,7 +80,6 @@ const BlogPage = async () => {
 
   return (
     <>
-      <GoogleAnalytics pageTitle="Blog" />
       <div className={styles.container}>
         <div className={styles.flexWraper}>
           <div className={styles.mainContent}>
