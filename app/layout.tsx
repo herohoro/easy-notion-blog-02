@@ -4,6 +4,8 @@ import {
   NEXT_PUBLIC_SITE_TITLE,
   NEXT_PUBLIC_SITE_DESCRIPTION,
 } from './server-constants'
+import { NEXT_PUBLIC_GA_TRACKING_ID } from "./server-constants"
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Footer from '../components/footer'
 import '../styles/global.css'
 import '../styles/syntax-coloring.css'
@@ -30,6 +32,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
         <Footer />
       </div>
     </body>
+    <GoogleAnalytics gaId={NEXT_PUBLIC_GA_TRACKING_ID} />
   </html>
 )
 
