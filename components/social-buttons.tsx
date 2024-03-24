@@ -11,7 +11,7 @@ import {
   TwitterShareButton,
 } from 'react-share'
 
-import * as gtag from '../lib/gtag'
+import { sendGAEvent } from '@next/third-parties/google'
 import styles from '../styles/social-buttons.module.css'
 import LikeButton from './like-button'
 
@@ -22,7 +22,8 @@ const SocialButtons = ({ title = '', url, id = null,like=null }) => (
         url={url}
         title={title}
         beforeOnClick={() =>
-          gtag.share({
+          sendGAEvent({
+            event: 'share',
             method: 'twitter',
             contentType: 'article',
             itemId: id,
@@ -36,7 +37,8 @@ const SocialButtons = ({ title = '', url, id = null,like=null }) => (
       <FacebookShareButton
         url={url}
         beforeOnClick={() =>
-          gtag.share({
+          sendGAEvent({
+            event: 'share',
             method: 'facebook',
             contentType: 'article',
             itemId: id,
@@ -51,7 +53,8 @@ const SocialButtons = ({ title = '', url, id = null,like=null }) => (
         url={url}
         title={title}
         beforeOnClick={() =>
-          gtag.share({
+          sendGAEvent({
+            event: 'share',
             method: 'pocket',
             contentType: 'article',
             itemId: id,
@@ -66,7 +69,8 @@ const SocialButtons = ({ title = '', url, id = null,like=null }) => (
         url={url}
         title={title}
         beforeOnClick={() =>
-          gtag.share({
+          sendGAEvent({
+            event: 'share',
             method: 'hatena',
             contentType: 'article',
             itemId: id,
