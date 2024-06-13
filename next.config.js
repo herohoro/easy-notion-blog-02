@@ -28,6 +28,7 @@ if (!DATABASE_ID) {
 }
 
 module.exports = {
+  output: 'export',
   images: {
     remotePatterns: [
       {
@@ -44,12 +45,12 @@ module.exports = {
       },
     ],
   },
-  async rewrites() {
-    return [
-      { source: '/atom', destination: '/api/atom' },
-      { source: '/sitemap', destination: '/api/sitemap' },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     { source: '/atom', destination: '/api/atom' },
+  //     { source: '/sitemap', destination: '/api/sitemap' },
+  //   ];
+  // },
 
   outputFileTracing: false,
 

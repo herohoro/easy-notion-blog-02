@@ -32,10 +32,10 @@ import {
   getAllTags,
   getAllCategorys,
 } from '../../lib/notion/client'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export const revalidate = 60
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = `Blog - ${NEXT_PUBLIC_SITE_TITLE}`
@@ -84,7 +84,7 @@ const BlogPage = async () => {
         <div className={styles.flexWraper}>
           <div className={styles.mainContent}>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Image
+              <img
                 src="/study-hero.jpeg"
                 width={300}
                 height={200}
