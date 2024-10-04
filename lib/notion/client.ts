@@ -989,6 +989,21 @@ function _validPageObject(pageObject: responses.PageObject): boolean {
   )
 }
 
+export async function getCommentsPage(pageId: string): Promise<Comment> {
+  const blockId = pageId;
+  const res = await client.comments.list({ block_id: blockId });
+  console.log(blockId); // ブロックIDを確認
+  console.log(res); // コメントの全データを確認
+  const comments = res.results.map((comment) => {
+    return {
+      id: comment.id,
+      text: comment.rich_text[0].plain_text // 例えば、コメントのテキストを抽出
+    };
+  });
+  
+  return comments
+}
+
 function _buildPost(pageObject: responses.PageObject): Post {
   const prop = pageObject.properties
 
