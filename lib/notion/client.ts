@@ -989,7 +989,7 @@ function _validPageObject(pageObject: responses.PageObject): boolean {
   )
 }
 
-export async function getCommentsPage(pageId: string): Promise<Comment> {
+export async function getCommentsPage(pageId: string) {
   const blockId = pageId;
   const res = await client.comments.list({ block_id: blockId });
   console.log(blockId); // ブロックIDを確認
