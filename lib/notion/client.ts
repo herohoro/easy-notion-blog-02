@@ -992,26 +992,15 @@ function _validPageObject(pageObject: responses.PageObject): boolean {
 export async function getCommentsPage(pageId: string) {
   const blockId = pageId;
   const res = await client.comments.list({ block_id: blockId });
-  console.log(blockId); // ブロックIDを確認
-  console.log(res); // コメントの全データを確認
-  // const comments = res.results.map((comment) => {
-  //   return {
-  //     id: comment.id,
-  //     text: comment.rich_text[0].plain_text, // 例えば、コメントのテキストを抽出
-  //     user: comment.created_by.id
-  //   };
-  // });
-  // console.log(comments)
-
   const comments = await Promise.all(res.results.map(async (comment) => {
-    const userName = await getUserName(comment.created_by.id); // ユーザー名を取得
+    const userName = await getUserName(comment.created_by.id);
     return {
       id: comment.id,
       text: comment.rich_text[0].plain_text, // コメントのテキストを抽出
       user: userName // ユーザー名を追加
     };
   }));
-  
+
   return comments
 }
 
