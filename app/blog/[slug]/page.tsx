@@ -121,13 +121,18 @@ const BlogSlugPage = async ({ params: { slug } }) => {
               <NoContents contents={blocks} />
               
               <div>
-                {comment.map((comment, index) => (
-                  <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                    <div style={{ marginRight: '10px', fontWeight: 'bold' }}>{comment.user}:</div>
-                    <div>{comment.text}</div>
-                  </div>
-                ))}
+                {comment && comment.length > 0 ? (
+                  comment.map((comment, index) => (
+                    <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                      <div style={{ marginRight: '10px', fontWeight: 'bold' }}>{comment.user}:</div>
+                      <div>{comment.text}</div>
+                    </div>
+                  ))
+                ) : (
+                  <div>No comments to display</div>
+                )}
               </div>
+
 
               <PostBody blocks={blocks} />
               <ClosePhrase />
