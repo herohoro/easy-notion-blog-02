@@ -994,14 +994,31 @@ export async function getCommentsPage(pageId: string) {
   const res = await client.comments.list({ block_id: blockId });
   console.log(blockId); // ブロックIDを確認
   console.log(res); // コメントの全データを確認
-  const comments = res.results.map((comment) => {
+  // const comments = res.results.map((comment) => {
+  //   return {
+  //     id: comment.id,
+  //     text: comment.rich_text[0].plain_text, // 例えば、コメントのテキストを抽出
+  //     user: comment.created_by.id
+  //   };
+  // });
+  // console.log(comments)
+
+  const comments = await Promise.all(res.results.map(async (comment) => {
+    const userName = await getUserName(comment.created_by.id); // ユーザー名を取得
     return {
       id: comment.id,
-      text: comment.rich_text[0].plain_text // 例えば、コメントのテキストを抽出
+      text: comment.rich_text[0].plain_text, // コメントのテキストを抽出
+      user: userName // ユーザー名を追加
     };
-  });
+  }));
   
   return comments
+}
+
+async function getUserName(userId: string){
+   const res = await client.users.retrieve({ user_id: userId });
+   const user= res.name
+   return user
 }
 
 function _buildPost(pageObject: responses.PageObject): Post {
