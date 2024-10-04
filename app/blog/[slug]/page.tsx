@@ -119,7 +119,16 @@ const BlogSlugPage = async ({ params: { slug } }) => {
               <PostEditTimeStr post={post} />
 
               <NoContents contents={blocks} />
-              <div>{comment.map((comment) => (<div style={{ marginBottom: '10px'}}>{comment.text}</div>))} </div>
+              
+              <div>
+                {comment.map((comment, index) => (
+                  <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                    <div style={{ marginRight: '10px', fontWeight: 'bold' }}>{comment.user}:</div>
+                    <div>{comment.text}</div>
+                  </div>
+                ))}
+              </div>
+
               <PostBody blocks={blocks} />
               <ClosePhrase />
 
