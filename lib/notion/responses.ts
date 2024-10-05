@@ -30,6 +30,27 @@ export interface RetrieveBlockChildrenResponse {
   block?: Record<string, never>
 }
 
+// https://developers.notion.com/reference/retrieve-a-comment
+export interface RetrieveCommentsResponse {
+  object: string
+  results: CommentObject[]
+  next_cursor: null|string
+  has_more: boolean
+  type: string
+  comments?: Record<string, never>
+}
+
+
+export interface CommentObject{
+  object: string
+  id: string
+  parent: Parent
+  discussion_id: string
+  created_time: string
+  last_edited_time: string
+  created_by: UserObject
+  rich_text: RichTextObject
+}
 
 // common interfaces
 interface UserObject {

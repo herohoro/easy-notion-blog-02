@@ -33,6 +33,7 @@ import {
   getAllTags,
   getAllCategorys,
   getAllBlocksByBlockId,
+  getCommentsPage
 } from '../../../lib/notion/client'
 
 export const revalidate = 30
@@ -88,7 +89,7 @@ const BlogSlugPage = async ({ params: { slug } }) => {
     redirect('/blog')
   }
 
-  const [blocks, rankedPosts, recentPosts, tags, sameTagPosts, categorys] =
+  const [blocks, rankedPosts, recentPosts, tags, sameTagPosts, categorys, comment] =
     await Promise.all([
       getAllBlocksByBlockId(post.PageId),
       getRankedPosts(),
@@ -96,6 +97,7 @@ const BlogSlugPage = async ({ params: { slug } }) => {
       getAllTags(),
       getPostsByTag(post.Tags[0], 6),
       getAllCategorys(),
+      getCommentsPage(post.PageId)
     ])
 
   return (
@@ -117,6 +119,21 @@ const BlogSlugPage = async ({ params: { slug } }) => {
               <PostEditTimeStr post={post} />
 
               <NoContents contents={blocks} />
+              
+              <div>
+                {comment && comment.length > 0 ? (
+                  comment.map((comment, index) => (
+                    <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                      <div style={{ marginRight: '10px', fontWeight: 'bold' }}>{comment.user}:</div>
+                      <div>{comment.text}</div>
+                    </div>
+                  ))
+                ) : (
+                  <div>No comments to display</div>
+                )}
+              </div>
+
+
               <PostBody blocks={blocks} />
               <ClosePhrase />
 

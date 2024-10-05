@@ -13,6 +13,13 @@ export interface Post {
   CategoryColor: string
   LikeRank: number
 }
+export interface Comment{
+  Id: string
+  Type: string
+  Parent: string[]
+  DiscussionId: string
+  RichText: RichText[]
+}
 
 export interface Block {
   Id: string
