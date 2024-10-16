@@ -15,6 +15,7 @@ import {
 } from '../lib/blog-helpers'
 
 import styles from '../styles/blog-parts.module.css'
+import notionStyle from '../styles/notion-block.module.css'
 
 export const PostDate = ({ post }) => (
   <div className={styles.postDate}>
@@ -142,9 +143,10 @@ export const IndexList = ({ blocks, heading }) => (
   </div>
 )
 export const ClosePhrase = () => (
-  <div>
-    <p>Twitterでは更新のお知らせを随時行っています</p>
-    <a href="https://twitter.com/mineral_30">興味ある方はLet&apos;sフォロー★</a>
+  <div style={{ margin: '30px 0' }}>
+    <hr className={notionStyle.divider} style={{marginBottom: '30px'}}></hr>
+    <p>Xではたま〜にする更新のお知らせを行っています</p>
+    <a href="https://x.com/mineral_30">興味ある方はLet&apos;sフォロー★</a>
   </div>
 )
 export const ReadMoreLink = ({ post }) => (
