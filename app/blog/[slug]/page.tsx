@@ -123,13 +123,13 @@ const BlogSlugPage = async ({ params: { slug } }) => {
               <div>
                 {comment && comment.length > 0 ? (
                   comment.map((comment, index) => (
-                    <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                      <div style={{ marginRight: '10px', fontWeight: 'bold' }}>{comment.user}:</div>
+                    <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '10px' }}>
+                      <div style={{ minWidth: '100px', fontWeight: 'bold', marginRight: '10px', whiteSpace: 'nowrap', flexShrink: 0 }}>{comment.user}:</div>
                       <div>{comment.text}</div>
                     </div>
                   ))
                 ) : (
-                  <div>No comments to display</div>
+                  <div style={{flexGrow: 1, wordBreak: 'break-word'}}>No comments to display</div>
                 )}
               </div>
 
