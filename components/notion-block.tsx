@@ -105,16 +105,21 @@ const colorClass = (color: string) => {
 }
 
 const Paragraph = ({ block, headings }) => (
+<>
   <p className={colorClass(block.Paragraph.Color)}>
     {block.Paragraph.RichTexts.map(
       (richText: interfaces.RichText, i: number) => (
         <RichText richText={richText} key={`paragraph-${block.Id}-${i}`} />
       )
     )}
-    {block.Paragraph.Children ? (
-      <NotionBlocks blocks={block.Paragraph.Children} headings={headings} />
-    ) : null}
+
   </p>
+  {block.Paragraph.Children && (
+    <div style={{ paddingLeft: "1em" }}>
+      <NotionBlocks blocks={block.Paragraph.Children} headings={headings} />
+      </div>
+    )}
+  </>
 )
 
 const Heading1 = ({ block, headings }) => (
