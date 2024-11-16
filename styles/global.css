@@ -133,7 +133,7 @@ pre {
   white-space: pre;
   tab-size: 2;
 }
-pre :global(code) {
+pre code {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
