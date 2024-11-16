@@ -40,7 +40,8 @@ export const revalidate = 30
 // export const dynamic = 'force-dynamic'
 export const dynamic = 'force-static'
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata(props): Promise<Metadata> {
+  const params = await props.params;
   const post = await getPostBySlug(params.slug)
   const title = `${post?.Title} - ${NEXT_PUBLIC_SITE_TITLE}`
   const description = post?.Excerpt
@@ -81,7 +82,13 @@ export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.Slug }))
 }
 
-const BlogSlugPage = async ({ params: { slug } }) => {
+const BlogSlugPage = async props => {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const post = await getPostBySlug(slug)
 
   if (!post) {

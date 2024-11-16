@@ -38,9 +38,13 @@ export const revalidate = 60
 export const dynamicParams = false
 export const dynamic = 'force-dynamic'
 
-export async function generateMetadata({
-  params: { category: encodedCategory },
-}): Promise<Metadata> {
+export async function generateMetadata(props): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    category: encodedCategory
+  } = params;
+
   const tag = decodeURIComponent(encodedCategory)
   const title = `Posts in ${tag} - ${NEXT_PUBLIC_SITE_TITLE}`
   const description = NEXT_PUBLIC_SITE_DESCRIPTION
@@ -78,7 +82,13 @@ export async function generateStaticParams() {
   return categorys.map((category) => ({ category: category }))
 }
 
-const BlogCategoryPage = async ({ params: { category: encodedCategory } }) => {
+const BlogCategoryPage = async props => {
+  const params = await props.params;
+
+  const {
+    category: encodedCategory
+  } = params;
+
   const category = decodeURIComponent(encodedCategory)
 
   const posts = await getPostsByCategory(category, NUMBER_OF_POSTS_PER_PAGE)

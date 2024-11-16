@@ -37,9 +37,14 @@ import styles from '../../../../../../styles/blog.module.css'
 export const revalidate = 3600
 export const dynamic = 'force-dynamic'
 
-export async function generateMetadata({
-  params: { date: encodedDate, category: encodedCategory },
-}): Promise<Metadata> {
+export async function generateMetadata(props): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    date: encodedDate,
+    category: encodedCategory
+  } = params;
+
   const date = decodeURIComponent(encodedDate)
   const tag = decodeURIComponent(encodedCategory)
   const title = `Posts in ${tag} before ${
@@ -75,9 +80,14 @@ export async function generateMetadata({
   return metadata
 }
 
-const BlogCategoryBeforeDatePage = async ({
-  params: { category: encodedCategory, date: encodedDate },
-}) => {
+const BlogCategoryBeforeDatePage = async props => {
+  const params = await props.params;
+
+  const {
+    category: encodedCategory,
+    date: encodedDate
+  } = params;
+
   const category = decodeURIComponent(encodedCategory)
   const date = decodeURIComponent(encodedDate)
 
