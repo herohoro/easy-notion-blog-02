@@ -37,9 +37,13 @@ import {
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
 
-export async function generateMetadata({
-  params: { tag: encodedTag },
-}): Promise<Metadata> {
+export async function generateMetadata(props): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    tag: encodedTag
+  } = params;
+
   const tag = decodeURIComponent(encodedTag)
   const title = `Posts in ${tag} - ${NEXT_PUBLIC_SITE_TITLE}`
   const description = NEXT_PUBLIC_SITE_DESCRIPTION
@@ -77,7 +81,13 @@ export async function generateStaticParams() {
   return tags.map((tag) => ({ tag: tag }))
 }
 
-const BlogTagPage = async ({ params: { tag: encodedTag } }) => {
+const BlogTagPage = async props => {
+  const params = await props.params;
+
+  const {
+    tag: encodedTag
+  } = params;
+
   const tag = decodeURIComponent(encodedTag)
 
   const posts = await getPostsByTag(tag, NUMBER_OF_POSTS_PER_PAGE)
