@@ -136,7 +136,7 @@ const BlogSlugPage = async props => {
                     </div>
                   ))
                 ) : (
-                  <div style={{flexGrow: 1, wordBreak: 'break-word'}}>No comments to display</div>
+                  ""
                 )}
               </div>
 
