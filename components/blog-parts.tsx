@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import { Post } from '../lib/notion/interfaces'
 import NotionBlocks from './notion-block'
@@ -235,7 +235,7 @@ export const BuyMeCoffee = () => (
       rel="noreferrer"
       style={{ textAlign: 'center' }}
     >
-      <Image
+      <img
         src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
         alt="Buy Me A Coffee"
         height={60}

@@ -9,10 +9,10 @@ import {
   getAllSecShinyaPosts,
   getSecShinyaMessage,
 } from '../../lib/sec-notion/client'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export const revalidate = 60
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 const RenderPostsSpace = async () => {
   const [tags, categorys, secPosts, secMessages] = await Promise.all([
@@ -32,7 +32,7 @@ const RenderPostsSpace = async () => {
                 \ 未だに一人で学習中 /
               </h3>
               <div className={SecStyles.fukidashi}>
-                <Image
+                <img
                   src="/fukidashi.png"
                   width={100}
                   height={100}
@@ -57,7 +57,7 @@ const RenderPostsSpace = async () => {
               <p>
                 記録しておくとモチベが上がるので残しています🔥
               </p>
-              <Image
+              <img
                 src="/neko.jpeg"
                 width={900}
                 height={300}

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { NEXT_PUBLIC_SITE_TITLE } from '../app/server-constants'
 import styles from '../styles/header-tsuku.module.css'
 
@@ -22,7 +22,7 @@ const HeaderTsuku = () => {
       <header className={styles.header}>
         <h1>
           <Link href="/">
-            <Image
+            <img
               src="/herohoro_title.png"
               width={200}
               height={50}
