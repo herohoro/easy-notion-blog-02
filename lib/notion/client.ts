@@ -33,7 +33,7 @@ import {
   Annotation,
 } from './interfaces'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { Client } = require('@notionhq/client')
+import { Client } from '@notionhq/client'
 import * as blogIndexCache from './blog-index-cache'
 
 const client = new Client({

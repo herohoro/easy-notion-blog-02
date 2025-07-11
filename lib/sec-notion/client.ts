@@ -4,7 +4,7 @@ import {
 } from '../../app/server-constants'
 import { Post } from './interfaces'
 
-const { Client } = require('@notionhq/client')
+import { Client } from '@notionhq/client'
 const client = new Client({
   auth: SEC_NOTION_API_SECRET,
 })
