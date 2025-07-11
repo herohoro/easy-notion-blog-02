@@ -13,7 +13,11 @@
   "overrides": [
     {
       "files": ["*.js"],
-      "parser": "espree"  // TypeScript用パーサを避ける
+      "parser": "espree",  // TypeScript用パーサを避ける
+      "parserOptions": {
+        "ecmaVersion": 2015,
+        "sourceType": "module"
+      }
     }
   ]
 }
