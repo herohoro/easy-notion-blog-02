@@ -257,10 +257,6 @@ interface RollupConfiguration {
 // https://developers.notion.com/reference/page
 export type PageObject = NotionPageObjectResponse
 
-interface PageProperties {
-  [key: string]: PageProperty
-}
-
 interface PageProperty {
   id: string
   type: string
