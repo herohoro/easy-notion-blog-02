@@ -5,7 +5,7 @@ export interface QueryDatabaseResponse {
   results: PageObject[]
   next_cursor: null|string
   has_more: boolean
-  type: string
+  type?: string
   page?: Record<string, never>
 }
 
