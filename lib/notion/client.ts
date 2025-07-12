@@ -56,7 +56,7 @@ export async function getPosts(pageSize = 10): Promise<Post[]> {
       },
     ],
     page_size: pageSize,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -84,7 +84,7 @@ export async function getAllPosts(): Promise<Post[]> {
         },
       ],
       page_size: 100,
-    }
+    } as const
 
     while (true) {
       const res: responses.QueryDatabaseResponse = await client.databases.query(
@@ -140,7 +140,7 @@ export async function getRankedPosts(pageSize = 10): Promise<Post[]> {
       },
     ],
     page_size: pageSize,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -177,7 +177,7 @@ export async function getPostsBefore(
       },
     ],
     page_size: pageSize,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -204,7 +204,7 @@ export async function getFirstPost(): Promise<Post | null> {
       },
     ],
     page_size: 1,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -227,7 +227,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     return allPosts.find((post) => post.Slug === slug)
   }
 
-  const res: responses.QueryDatabaseResponse = await client.databases.query({
+  const params = {
     database_id: DATABASE_ID,
     filter: _buildFilter([
       {
@@ -240,10 +240,13 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     sorts: [
       {
         property: 'Date',
-        direction: 'ascending',
+        direction: 'ascending', // ← 'ascending' をリテラル型にするため as const を付加
       },
     ],
-  })
+    page_size: 1,
+  } as const
+
+  const res: responses.QueryDatabaseResponse = await client.databases.query(params)
 
   if (!res.results.length) {
     return null
@@ -284,7 +287,7 @@ export async function getPostsByTag(
       },
     ],
     page_size: pageSize,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -323,7 +326,7 @@ export async function getPostsByCategory(category: string, pageSize = 100) {
       },
     ],
     page_size: pageSize,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -371,7 +374,7 @@ export async function getPostsByTagBefore(
       },
     ],
     page_size: pageSize,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -422,7 +425,7 @@ export async function getPostsByCategoryBefore(
       },
     ],
     page_size: pageSize,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -457,7 +460,7 @@ export async function getFirstPostByTag(tag: string): Promise<Post | null> {
       },
     ],
     page_size: 1,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
@@ -500,7 +503,7 @@ export async function getFirstPostByCategory(category: string) {
       },
     ],
     page_size: 1,
-  }
+  } as const
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
