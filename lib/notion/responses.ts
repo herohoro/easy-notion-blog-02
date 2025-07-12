@@ -1,13 +1,11 @@
+import {
+  QueryDatabaseResponse as NotionQueryDatabaseResponse,
+  PageObjectResponse as NotionPageObjectResponse
+} from '@notionhq/client/build/src/api-endpoints'
+
 // Query a database response
 // https://developers.notion.com/reference/post-database-query
-export interface QueryDatabaseResponse {
-  object: string
-  results: PageObject[]
-  next_cursor: null|string
-  has_more: boolean
-  type?: string
-  page?: Record<string, never>
-}
+export type QueryDatabaseResponse = NotionQueryDatabaseResponse
 
 // Retrieve a database response
 // https://developers.notion.com/reference/retrieve-a-database
@@ -257,20 +255,7 @@ interface RollupConfiguration {
 
 // Page object
 // https://developers.notion.com/reference/page
-export interface PageObject {
-  object: string
-  id: string
-  created_time: string
-  created_by: UserObject
-  last_edited_time: string
-  last_edited_by: UserObject
-  archived: boolean
-  icon: FileObject|Emoji
-  cover: Cover
-  properties: PageProperties
-  parent: Parent
-  url: string
-}
+export type PageObject = NotionPageObjectResponse
 
 interface PageProperties {
   [key: string]: PageProperty
