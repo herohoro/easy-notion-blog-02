@@ -52,7 +52,6 @@ export async function getPosts(pageSize = 10): Promise<Post[]> {
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'descending',
       },
     ],
@@ -81,7 +80,6 @@ export async function getAllPosts(): Promise<Post[]> {
       sorts: [
         {
           property: 'Date',
-          timestamp: 'created_time',
           direction: 'descending',
         },
       ],
@@ -175,7 +173,6 @@ export async function getPostsBefore(
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'descending',
       },
     ],
@@ -203,7 +200,6 @@ export async function getFirstPost(): Promise<Post | null> {
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'ascending',
       },
     ],
@@ -244,7 +240,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'ascending',
       },
     ],
@@ -285,7 +280,6 @@ export async function getPostsByTag(
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'descending',
       },
     ],
@@ -325,7 +319,6 @@ export async function getPostsByCategory(category: string, pageSize = 100) {
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'descending',
       },
     ],
@@ -374,7 +367,6 @@ export async function getPostsByTagBefore(
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'descending',
       },
     ],
@@ -426,7 +418,6 @@ export async function getPostsByCategoryBefore(
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'descending',
       },
     ],
@@ -462,7 +453,6 @@ export async function getFirstPostByTag(tag: string): Promise<Post | null> {
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'ascending',
       },
     ],
@@ -506,7 +496,6 @@ export async function getFirstPostByCategory(category: string) {
     sorts: [
       {
         property: 'Date',
-        timestamp: 'created_time',
         direction: 'ascending',
       },
     ],
