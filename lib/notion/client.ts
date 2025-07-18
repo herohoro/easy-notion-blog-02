@@ -52,11 +52,11 @@ export async function getPosts(pageSize = 10): Promise<Post[]> {
     sorts: [
       {
         property: 'Date',
-        direction: 'descending',
+        direction: 'descending' as 'descending',
       },
     ],
     page_size: pageSize,
-  } as const
+  }
 
   const res: responses.QueryDatabaseResponse = await client.databases.query(
     params
