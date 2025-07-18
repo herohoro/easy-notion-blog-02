@@ -46,16 +46,16 @@ export async function getPosts(pageSize = 10): Promise<Post[]> {
     return allPosts.slice(0, pageSize)
   }
 
+  const sorts = [
+    {
+      property: 'Date',
+      direction: 'descending' as const, 
+    },
+  ]
   const params = {
     database_id: DATABASE_ID,
     filter: _buildFilter(),
-    sorts: [
-      {
-        property: 'Date',
-        // eslint-disable-next-line @typescript-eslint/prefer-as-const
-        direction: 'descending',
-      },
-    ] as const,
+    sorts: sorts,
     page_size: pageSize,
   }
 
