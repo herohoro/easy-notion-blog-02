@@ -64,7 +64,7 @@ export async function getPosts(pageSize = 10): Promise<Post[]> {
   )
 
   return res.results
-    .filter((pageObject) => _validPageObject(pageObject))
+    .filter((pageObject) => _validPageObject(pageObject) as boolean)
     .map((pageObject) => _buildPost(pageObject))
 }
 
@@ -973,7 +973,8 @@ function _uniqueConditions(conditions = []) {
   })
 }
 
-function _validPageObject(pageObject: responses.PageObject): boolean {
+function _validPageObject(pageObject: responses.PageObject): pageObject is responses.PageObject & { properties: { Page: { title: any[] }, Slug: { rich_text: any[] }, Date: { date: any } } }
+ {
   const prop = pageObject.properties
   return (
     prop.Page.title.length > 0 &&
