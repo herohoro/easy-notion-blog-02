@@ -52,9 +52,10 @@ export async function getPosts(pageSize = 10): Promise<Post[]> {
     sorts: [
       {
         property: 'Date',
-        direction: 'descending' as 'descending',
+        // eslint-disable-next-line @typescript-eslint/prefer-as-const
+        direction: 'descending',
       },
-    ],
+    ] as const,
     page_size: pageSize,
   }
 
