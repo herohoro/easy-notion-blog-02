@@ -23,7 +23,7 @@ export async function getSecShinyaMessage() {
     sorts: [
       {
         property: 'last_edit',
-        direction: 'descending',
+        direction: "descending" as "descending",
       },
     ],
   }
@@ -50,7 +50,7 @@ export async function getAllSecShinyaPosts() {
     sorts: [
       {
         property: 'date',
-        direction: 'descending',
+        direction: "descending" as "descending",
       },
     ],
   }
@@ -77,7 +77,7 @@ export async function getAllSecPosts() {
     sorts: [
       {
         property: 'date',
-        direction: 'descending',
+        direction: "descending" as "descending",
       },
     ],
   }
