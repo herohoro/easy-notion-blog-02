@@ -24,7 +24,7 @@
     "@vercel/og": "^0.0.21",
     "axios": "^1.2.1",
     "got": "^12.5.3",
-    "mermaid": "^9.3.0",
+    "mermaid": "^11.10.1",
     "metascraper": "^5.32.3",
     "metascraper-description": "^5.32.3",
     "metascraper-image": "^5.32.3",
@@ -66,8 +66,5 @@
   },
   "overrides": {
     "@types/react": "18.3.12"
-  },
-  "resolutions": {
-    "cytoscape": "3.30.4"
   }
 }
