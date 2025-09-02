@@ -66,5 +66,8 @@
   },
   "overrides": {
     "@types/react": "18.3.12"
+  },
+  "resolutions": {
+    "cytoscape": "3.30.4"
   }
 }
