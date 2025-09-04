@@ -8,7 +8,8 @@
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-object-type": "off",
-    "@next/next/no-page-custom-font": "off"
+    "@next/next/no-page-custom-font": "off",
+    "@typescript-eslint/prefer-as-const": "off"
   },
   "overrides": [
     {
