@@ -25,9 +25,7 @@ const Mermaid: FC<Props> = props => {
     if (ref.current) {
       try {
         mermaid.parse(definition)
-        mermaid.mermaidAPI.render(id, definition, (html: string) => {
-          ref.current.innerHTML = html
-        })
+        mermaid.mermaidAPI.render(id, definition, ref.current)
       } catch (err) {
         console.log(err)
       }
